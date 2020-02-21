@@ -1,17 +1,17 @@
 import React from 'react';
 
-const Blog = (prop) => {
+const Profile = (prop) => {
     return(
         <>
         <div>
-            <h2>{prop.blogTitle}</h2>
-            <p>{prop.blogText}</p>
+            <h2>{prop.profileTitle}</h2>
+            <p>{prop.profileTitle}</p>
         </div>
 
         </>
     )
 }
-export default Blog;
+export default Profile;
 
 
 {/*   API TO BE MAKE IN STRAPI  */}

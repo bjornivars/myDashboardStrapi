@@ -1,7 +1,6 @@
 import React from 'react';
 
 const Movies = (prop) => {
-
     return(
         <>
         <input type="text" placeholder="Search.." />
