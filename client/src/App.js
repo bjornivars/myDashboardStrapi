@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 import Header from './components/header';
 import Heading from './components/heading';
-import DumbThing from './components/dumbthing';
+import JobCard from './components/jobs';
+
 
 
 export default class App extends Component {
@@ -22,10 +23,12 @@ export default class App extends Component {
                 blurb={'You dumb shit don´t fuck up'}
                 />
 
-        <DumbThing subheading={'This is me after the message'}
-                    imageMe={'https://cdn.mos.cms.futurecdn.net/JzqhuEDTRfCZKMKHUxPySB.jpg'}
-                    blurbMe={'I am scared, mommy pick me up'}
+        <JobCard title={"Static for now"}
+                logo={'https://seeklogo.com/images/R/react-logo-7B3CE81517-seeklogo.com.png'}
+                location={'location will stay here'}
+                how_to_apply={ 'Apply here '}
                 />
+
       </div>
     );
   }
