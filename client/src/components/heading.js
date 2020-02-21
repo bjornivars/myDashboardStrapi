@@ -6,6 +6,9 @@ const Heading = (props) => {
     return(
         <>
             <h1>{props.heading}</h1>
+            <img src={props.image} alt={'image of Cam'}/>
+            <p>{props.blurb}</p>
+
         </>
     )
 }
