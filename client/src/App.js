@@ -11,7 +11,6 @@ import Profile from './components/profile';
 import Login from './components/login';
 
 
-import ComponentDidMount from './components/testFETCH';
 
 
 
