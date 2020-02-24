@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 const Profile = (prop) => {
     return(
         <>
@@ -11,7 +12,17 @@ const Profile = (prop) => {
         </>
     )
 }
+
+
+
+
+
 export default Profile;
 
 
-{/*   API TO BE MAKE IN STRAPI  */}
+{/*  
+fetch('http://localhost:1337/Bjornivars')
+.then(response => { return response.json()})
+.then(result => console.log(result))
+*/}
+

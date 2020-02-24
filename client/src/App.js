@@ -11,10 +11,30 @@ import Profile from './components/profile';
 import Login from './components/login';
 
 
+import ComponentDidMount from './components/testFETCH';
+
+
 
 export default class App extends Component {
 
+  state = {
+    profile: undefined
+  }
+
+  componentDidMount(){
+    fetch("http://localhost:1337/Bjornivars")
+    .then(response => {return response.json()})
+    .then(result => {
+      this.setState({
+        profile: result
+      })
+    });
+
+
+  }
+
   render() {
+    console.log("this.state.profiles", this.state.profile)
     return (
       <div className="App">
 
@@ -73,15 +93,18 @@ export default class App extends Component {
         <Blog blogTitle={'Blog title'}
               blogText={'blogText'}
 />
-
-        <Profile profileTitle={'Profile title'}
-              profileText={'ProfileText'}
-/>
+      {
+        (this.state.profile !== undefined) ?
+          <Profile 
+              profileTitle={this.state.profile[0].Bjornivar}
+              profileText={this.state.profile[0].Skills}
+            /> :
+            <div>No Information</div>
+      }
 
         <Login loginTitle={'Login title'}
               loginText={'HERE WILL BE LOGIN'}
-/>
-                
+/>               
       </div>
 
     );

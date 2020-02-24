@@ -27,3 +27,8 @@ const Weather = (prop) => {
     )
 }
 export default Weather;
+
+
+{/* 
+    https://www.metaweather.com/api/location/862592/
+*/}

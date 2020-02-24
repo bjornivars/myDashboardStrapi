@@ -12,3 +12,8 @@ return(
 };
 
 export default JobCard; 
+
+
+{/*
+    https://jobs.github.com/positions.json?description=react&location=oslo
+*/}

@@ -27,3 +27,10 @@ const Crypto = (prop) => {
 }
 
 export default Crypto;
+
+
+{/*
+    https://api.cryptonator.com/api/ticker/btc-usd 
+    https://api.cryptonator.com/api/ticker/eth-usd 
+    https://api.cryptonator.com/api/ticker/xrp-usd 
+*/}
