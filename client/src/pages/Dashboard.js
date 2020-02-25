@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './App.css';
 import Header from '../components/header';
 import Movies from '../components/movies';
 import Facts from '../components/fact';
