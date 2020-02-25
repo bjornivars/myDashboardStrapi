@@ -8,6 +8,11 @@ import {
 import './index.css';
 import App from './App';
 import Dashboard from './pages/Dashboard';
+import BlogSpecific from './pages/BlogSpecific';
+import ProfileSpecific from './pages/ProfileSpecific';
+import LoginSpecific from './pages/ProfileSpecific';
+
+
 import * as serviceWorker from './serviceWorker';
 
 
@@ -16,6 +21,9 @@ ReactDOM.render(
         <App>
             <Switch>
                 <Route path="/" exact component={Dashboard} />
+                <Route path="/blog-specific/" component={BlogSpecific} />
+                <Route path="/profile-specific/" component={ProfileSpecific} />
+                <Route path="/login-specific/" component={LoginSpecific} />
             </Switch>
         </App>
     </Router>,

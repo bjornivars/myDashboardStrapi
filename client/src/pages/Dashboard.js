@@ -15,17 +15,33 @@ import Login from '../components/login';
 
 export default class Dashboard extends Component {
 
+  state = {
+    profile: undefined
+  }
+
+  componentDidMount(){
+    fetch("http://localhost:1337/Bjornivars")
+    .then(response => {return response.json()})
+    .then(result => {
+      this.setState({
+        profile: result
+      })
+    });
+
+
+  }
+
   render() {
     console.log("this.state.profiles", this.state.profile)
     return (
-      <div className="App">
-        <h1>DASHBOARD</h1>
+      <div className="Component">
+
         <Header dashboardlink={'Dashboard'} 
                 bloglink={'Blog'}
                 joblink={'Jobs'}
                 logout={'Logout'}
         />
-
+        <h1>Dashboard.js</h1>
 
         <div className="DashBoard">
             {/* Movies Card */}
@@ -75,12 +91,14 @@ export default class Dashboard extends Component {
         <Blog blogTitle={'Blog title'}
               blogText={'blogText'}
 />
-
-          <Profile profileTitle={'Blog title'}
-                    profileText={'blogText'}
-            /> 
-        
-
+      {
+        (this.state.profile !== undefined) ?
+          <Profile 
+              profileTitle={this.state.profile[0].Bjornivar}
+              profileText={this.state.profile[0].Skills}
+            /> :
+            <div>No Information</div>
+      }
 
         <Login loginTitle={'Login title'}
               loginText={'HERE WILL BE LOGIN'}
