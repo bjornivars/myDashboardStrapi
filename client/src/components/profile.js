@@ -6,7 +6,7 @@ const Profile = (prop) => {
         <>
         <div>
             <h2>{prop.profileTitle}</h2>
-            <p>{prop.profileTitle}</p>
+            <p>{prop.profileText}</p>
         </div>
 
         </>
