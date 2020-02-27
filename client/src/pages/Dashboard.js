@@ -4,10 +4,7 @@ import Movies from '../components/movies';
 import Facts from '../components/fact';
 import Weather from '../components/weather';
 import Crypto from '../components/crypto';
-import JobCard from '../components/jobs';
-import Blog from '../components/blog';
-import Profile from '../components/profile';
-import Login from '../components/login';
+
 
 
 
@@ -15,46 +12,52 @@ import Login from '../components/login';
 
 export default class Dashboard extends Component {
 
-  state = {
-    profile: undefined
-  }
 
-  componentDidMount(){
-    fetch("http://localhost:1337/Bjornivars")
-    .then(response => {return response.json()})
-    .then(result => {
-      this.setState({
-        profile: result
-      })
-    });
-
-
-  }
 
   render() {
-    console.log("this.state.profiles", this.state.profile)
     return (
       <div className="Component">
 
         <Header dashboardlink={'Dashboard'} 
                 bloglink={'Blog'}
                 joblink={'Jobs'}
+                profilelink={'Profile'}
                 logout={'Logout'}
         />
         <h1>Dashboard.js</h1>
 
-        <div className="DashBoard">
+        <div className="DashBoard container-fluid d-flex justify-content-between">
+          <div className="row col-md-8">
             {/* Movies Card */}
-             <Movies movieImage={'https://via.placeholder.com/640x360'}
+            <Movies movieImage={'https://via.placeholder.com/640x360'}
                   movieTitle={"Static movie title"}
-                  genre={"Static genre"}
+                  movieText={'Static movie text for now is great gusto mucho'}
+                  movieGenre={"Static genre"}
+/>
+            {/* Crypto Card */}
+            <Crypto cryptoTitle={'Crypto'}
+                  cryptoBTC={'BTC'}
+                  BTCprice={'1102020543253464575'}
+                  BTCvolume={'324567875645.413254365'}
+                  cryptoETH={'ETH'}
+                  ETHprice={'12345'}
+                  ETHvolume={'65.413254365'}
+                  cryptoXRP={'XRP'}
+                  XRPprice={'5234365476'}
+                  XRPvolume={'524365'}
 />
             {/* Random fact Card */}
-                <Facts factTitle={'Random Fact Of The Day'}
-                  fact={'geriojfoigjnrejg jgeroijngverijngdjk gruengiernl'}
+            <Facts factTitle={'Random Fact Of The Day'}
+                  factText={'geriojfoigjnrejg jgeroijngverijngdjk gruengiernl'}
 />
+
+          </div> {/* col-md-8 */}
+
+
+<div className="row col-md-4">
+
             {/* Weather Card */}
-                <Weather weatherTitle={'weatherTitle'}
+            <Weather weatherTitle={'weatherTitle'}
                   weatherStateName={'weatherStateName'}
                   weatherStateAbbr={'weatherStateAbbr'}
                   weatherCreated={'weatherCreated'}
@@ -69,28 +72,14 @@ export default class Dashboard extends Component {
                   weatherVisibility={'weatherVisibility'}
                   weatherPredictability={'weatherPredictability'}
 />
-            {/* Crypto Card */}
-                <Crypto cryptoTitle={'Crypto'}
-                  cryptoBTC={'BTC'}
-                  BTCprice={'1102020543253464575'}
-                  BTCvolume={'324567875645.413254365'}
-                  cryptoETH={'ETH'}
-                  ETHprice={'12345'}
-                  ETHvolume={'65.413254365'}
-                  cryptoXRP={'XRP'}
-                  XRPprice={'5234365476'}
-                  XRPvolume={'524365'}
-/>
+</div>
+
+
+
         </div>
 
-        <JobCard title={"Static for now"}
-                logo={'https://seeklogo.com/images/R/react-logo-7B3CE81517-seeklogo.com.png'}
-                location={'location will stay here'}
-                how_to_apply={ 'Apply here '}
-/>
-        <Blog blogTitle={'Blog title'}
-              blogText={'blogText'}
-/>
+
+{/*
       {
         (this.state.profile !== undefined) ?
           <Profile 
@@ -99,10 +88,10 @@ export default class Dashboard extends Component {
             /> :
             <div>No Information</div>
       }
+*/}
 
-        <Login loginTitle={'Login title'}
-              loginText={'HERE WILL BE LOGIN'}
-/>               
+
+              
       </div>
 
     );

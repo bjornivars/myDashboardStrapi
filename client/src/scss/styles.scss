@@ -3,12 +3,12 @@
 //Variables should always be on top
 // @import "partials/variables";
 //Then layout
-// @import "partials/layout";
+@import "partials/layout";
 //Then navbar
 @import "partials/navbar";
 
-// @import "partials/forms";
-
+@import "partials/movieCard";
+@import "partials/weatherCard";
 
 /////// then everything between header and footer
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // import './App.css';
-import 'bootstrap3/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './scss/styles.scss';
 
 /*
