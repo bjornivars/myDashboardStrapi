@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
-import './App.css';
-import Header from './components/header';
+// import './App.css';
+import 'bootstrap3/dist/css/bootstrap.min.css';
 /*
 import Movies from './components/movies';
 import Facts from './components/fact';
 import Weather from './components/weather';
 import Crypto from './components/crypto';
 */
-import JobCard from './components/jobs';
 /*
 import Blog from './components/blog';
 import Profile from './components/profile';
