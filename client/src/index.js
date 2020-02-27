@@ -10,7 +10,7 @@ import App from './App';
 import Dashboard from './pages/Dashboard';
 import BlogSpecific from './pages/BlogSpecific';
 import ProfileSpecific from './pages/ProfileSpecific';
-import LoginSpecific from './pages/ProfileSpecific';
+import LoginSpecific from './pages/LoginSpecific';
 
 
 import * as serviceWorker from './serviceWorker';
