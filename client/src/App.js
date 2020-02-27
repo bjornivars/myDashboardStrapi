@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 // import './App.css';
 import 'bootstrap3/dist/css/bootstrap.min.css';
+import './scss/styles.scss';
+
 /*
 import Movies from './components/movies';
 import Facts from './components/fact';
