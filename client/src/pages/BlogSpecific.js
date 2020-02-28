@@ -6,12 +6,14 @@ export default class BlogSpecific extends Component {
   render() {
     return (
         <div className="BlogSpecific">
+        
                 <Header dashboardlink={'Dashboard'} 
                 bloglink={'Blog'}
                 joblink={'Jobs'}
                 profilelink={'Profile'}
                 logout={'Logout'}
         />
+
           <Blog blogTitle={'Blog title'}
               blogText={'blogText'}
 />

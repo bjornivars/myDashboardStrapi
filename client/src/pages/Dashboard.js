@@ -24,7 +24,7 @@ export default class Dashboard extends Component {
                 profilelink={'Profile'}
                 logout={'Logout'}
         />
-        <h1>Dashboard.js</h1>
+        <h1 className="mb-3 headerPadding">Dashboard.js</h1>
 
         <div className="DashBoard container-fluid d-flex justify-content-between">
           <div className="row col-md-8">

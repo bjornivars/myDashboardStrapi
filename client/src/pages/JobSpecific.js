@@ -13,7 +13,7 @@ export default class JobSpecific extends Component {
                 logout={'Logout'}
         />
 
-<h1 className="text-center mt-5 mb-5">JobSpecific.js</h1>
+<h1 className="text-center headerPadding mb-5">JobSpecific.js</h1>
 
           <JobCard jobTitle={"Some job for now"}
                 jobLogo={'https://seeklogo.com/images/R/react-logo-7B3CE81517-seeklogo.com.png'}

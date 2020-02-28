@@ -30,10 +30,9 @@ export default class ProfileSpecific extends Component {
                 profilelink={'Profile'}
                 logout={'Logout'}
         />
-        <h1 className="text-center">ProfileSpecific.js</h1>
 
 
-
+<h1 className="text-center headerPadding mb-5">ProfileSpecific.js</h1>
 
         {
         (this.state.profile !== undefined) ?

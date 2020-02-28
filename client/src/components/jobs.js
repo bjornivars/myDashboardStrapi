@@ -4,7 +4,7 @@ const JobCard = (prop) => {
 return(
 
 
-
+<div className="container">
 
 <div className="col-md-12 d-flex justify-content-between mb-5">
     <div className="card col-md-3 ">
@@ -36,7 +36,7 @@ return(
 
 </div>
 
-
+</div>
 
     )
 };
