@@ -16,8 +16,6 @@ const Blog = (prop) => {
 
                 <img className=" w-100 " src={'https://seo-focus.com/wp-content/uploads/2018/10/A-Blog-Isn%E2%80%99t-a-Blog-It%E2%80%99s-a-Business.jpg'} alt="Blog image" />
                 <p>{prop.blogText}</p>
-                <p>{prop.blogText}</p>
-                <p>{prop.blogText}</p>
             </div>
         </div>
 
