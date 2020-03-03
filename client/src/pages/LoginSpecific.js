@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React, * as react from 'react';
 import Header from '../components/header';
 import Login from '../components/header';
 
 
-export default class LoginSpecific extends Component {
+export default class LoginSpecific extends react.Component {
   render() {
     return (
         <div className="LoginSpecific">

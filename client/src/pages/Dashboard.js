@@ -1,13 +1,49 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import Header from '../components/header';
 import Movies from '../components/movies';
 import Facts from '../components/fact';
 import Weather from '../components/weather';
 import Crypto from '../components/crypto';
+import {HEROKU_BYPASS_CORS,
+        WEATHER_API,
+        BITCOIN_API
+} from '../Constants';
 
 
 export default class Dashboard extends Component {
+  state = {
+    consolidatedWeather: undefined,
+    weatherCityName: undefined,
+    lattLong: "no data yet Lattlong",
+    locationType: undefined,
+
+    bitcoinData: undefined,
+  }
+  
+  componentDidMount(){
+    axios.get(HEROKU_BYPASS_CORS + WEATHER_API)
+    .then(result => {
+      console.log(result)
+    this.setState({
+      consolidatedWeather: result.data.consolidated_weather,
+      weatherCityName: result.data.title,
+      lattLong: result.data.latt_long,
+      locationType: result.data.location_type,
+    })
+  })
+  axios.get(HEROKU_BYPASS_CORS + BITCOIN_API)
+  .then(bitcoinResult => {
+    console.log(bitcoinResult)
+  this.setState({
+    bitcoinData: bitcoinResult
+  })
+})
+  }
+
   render() {
+    const {consolidatedWeather, weatherCityName, lattLong, locationType} = this.state;
+    console.log(consolidatedWeather);
     return (
       <div className="Component">
 
@@ -50,21 +86,18 @@ export default class Dashboard extends Component {
 <div className="row col-md-4">
 
             {/* Weather Card */}
-            <Weather weatherTitle={'weatherTitle'}
-                  weatherStateName={'weatherStateName'}
-                  weatherStateAbbr={'weatherStateAbbr'}
-                  weatherCreated={'weatherCreated'}
-                  weatherapplicableDate={'weatherapplicableDate'}
-                  weatherMinTemp={'weatherMinTemp'}
-                  weatherMaxTemp={'weatherMaxTemp'}
-                  weatherTheTemp={'weatherTheTemp'}
-                  weatherWindSpeed={'weatherWindSpeed'}
-                  weatherWindDirection={'weatherWindDirection'}
-                  weatherAirPressure={'weatherAirPressure'}
-                  weatherHumidity={'weatherHumidity'}
-                  weatherVisibility={'weatherVisibility'}
-                  weatherPredictability={'weatherPredictability'}
+            {
+              (consolidatedWeather !== undefined) ?
+              consolidatedWeather.map((value, index) => {
+               return <Weather key={index}
+                  weatherTitle={weatherCityName}
+                  latitudeLongitude={lattLong}
+                  location={locationType}
 />
+              }) : 
+              <div>No information for you dick</div>
+
+            }
 </div>
 
 

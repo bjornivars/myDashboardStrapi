@@ -12,7 +12,7 @@ return(
     <img className="card-img-top" src={prop.jobLogo} alt="Card cap" />
     <div className="card-body">
         <h5 className="card-title">{prop.jobTitle}</h5>
-        <p className="card-text">{prop.jobLocation}</p>
+        <p className="card-text">{prop.jobDescription}</p>
         <Link  className="btn btn-primary" to="#">{prop.how_to_apply}</Link>
     </div>
     </div>
@@ -21,7 +21,7 @@ return(
     <img className="card-img-top" src={prop.jobLogo} alt="Card cap" />
     <div className="card-body">
         <h5 className="card-title">{prop.jobTitle}</h5>
-        <p className="card-text">{prop.jobLocation}</p>
+        <p className="card-text">{prop.jobDescription}</p>
         <Link  className="btn btn-primary" to="#">{prop.how_to_apply}</Link>
     </div>
     </div>
@@ -30,7 +30,7 @@ return(
     <img className="card-img-top" src={prop.jobLogo} alt="Card cap" />
     <div className="card-body">
         <h5 className="card-title">{prop.jobTitle}</h5>
-        <p className="card-text">{prop.jobLocation}</p>
+        <p className="card-text">{prop.jobDescription}</p>
         <Link className="btn btn-primary" to="#">{prop.how_to_apply}</Link>
     </div>
     </div>
