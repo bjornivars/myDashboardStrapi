@@ -10,7 +10,9 @@ const Profile = (prop) => {
             </div>
             <div className="col-md-5 m-auto pt-5">
                 <h2>{prop.profileTitle}</h2>
-                <p className="mt-5">{prop.profileText}</p>
+                <p className="mt-5">{prop.age}</p>
+                <p className="mt-5">{prop.email}</p>
+
             </div>
         </div>
 

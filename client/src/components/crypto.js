@@ -11,18 +11,18 @@ const Crypto = (prop) => {
     <h2 className="card-title">{prop.cryptoTitle}</h2>
     <div>
         <h3>{prop.cryptoBTC}</h3>
-        <p>{prop.CryptoPrice}</p>
-        <p>{prop.BTCvolume}</p>
+        <p>Price: {prop.BTCprice}</p>
+        <p>Volume: {prop.BTCvolume}</p>
     </div>
     <div>
         <h3>{prop.cryptoETH}</h3>
-        <p>{prop.CryptoPrice}</p>
-        <p>{prop.ETHvolume}</p>
+        <p>Price: {prop.ETHprice}</p>
+        <p>Volume: {prop.ETHvolume}</p>
     </div>
     <div>
         <h3>{prop.cryptoXRP}</h3>
-        <p>{prop.CryptoPrice}</p>
-        <p>{prop.XRPvolume}</p>
+        <p>Price: {prop.XRPprice}</p>
+        <p>Volume: {prop.XRPvolume}</p>
     </div>
   </div>
 </div>

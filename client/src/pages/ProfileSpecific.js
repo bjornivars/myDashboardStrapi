@@ -1,24 +1,36 @@
 import React, * as react from 'react';
 import Header from '../components/header';
 import Profile from '../components/profile';
+import axios from 'axios';
+import { STRAPI_API } from '../Constants';
 
 
 export default class ProfileSpecific extends react.Component {
   state = {
-    profile: undefined
+    profile: undefined,
+    name: "no name yet",
+    age: undefined,
+    email: undefined,
   }
 
   componentDidMount(){
-    fetch("http://localhost:1337/Bjornivars")
-    .then(response => {return response.json()})
+    axios.get(STRAPI_API)
     .then(result => {
-      this.setState({
-        profile: result
-      })
-    });
+      console.log(result)
+    this.setState({
+      profile: result.data,
+      name: result.data.Name,
+      age: result.data.Age,
+      email: result.data.Email,
+
+    })
+  })
   }
   render() {
-    console.log("this.state.profiles", this.state.profile)
+    const {profile, name, age, email,
+    
+    } = this.state;
+console.log(profile);
     return (
         <div className="ProfileSpecific">
 
@@ -33,12 +45,15 @@ export default class ProfileSpecific extends react.Component {
 <h1 className="text-center headerPadding mb-5">ProfileSpecific.js</h1>
 
         {
-        (this.state.profile !== undefined) ?
-          <Profile 
-              profileTitle={this.state.profile[0].Bjornivar}
-              profileText={this.state.profile[0].Skills}
-            /> :
-            <div>No Information</div>
+        (profile !== undefined) ?
+        profile.map((value, index) => {
+          return <Profile key={index}
+              profileTitle={name}
+              age={age}
+              email={email}
+            /> 
+        }) :
+        <div>No Information</div>
       }
         </div>
     );

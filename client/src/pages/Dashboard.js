@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, * as react from 'react';
 import axios from 'axios';
 import Header from '../components/header';
 import Movies from '../components/movies';
@@ -7,11 +7,13 @@ import Weather from '../components/weather';
 import Crypto from '../components/crypto';
 import {HEROKU_BYPASS_CORS,
         WEATHER_API,
-        BITCOIN_API
+        BITCOIN_API,
+        ETHEREUM_API,
+        RIPPLE_API
 } from '../Constants';
 
 
-export default class Dashboard extends Component {
+export default class Dashboard extends react.Component {
   state = {
     consolidatedWeather: undefined,
     weatherCityName: undefined,
@@ -19,6 +21,20 @@ export default class Dashboard extends Component {
     locationType: undefined,
 
     bitcoinData: undefined,
+    btcTitle: "No name defined",
+    btcPrice: undefined,
+    btcVolume: undefined,
+
+
+    ethData: undefined,
+    ethTitle: "no name defined",
+    ethPrice: undefined,
+    ethVolume: undefined,
+
+    xrpData: undefined,
+    xrpTitle: undefined,
+    xrpPrice: undefined,
+    xrpolume: undefined,
   }
   
   componentDidMount(){
@@ -32,17 +48,48 @@ export default class Dashboard extends Component {
       locationType: result.data.location_type,
     })
   })
-  axios.get(HEROKU_BYPASS_CORS + BITCOIN_API)
+  axios.get(BITCOIN_API)
   .then(bitcoinResult => {
-    console.log(bitcoinResult)
+   // console.log(bitcoinResult)
   this.setState({
-    bitcoinData: bitcoinResult
+    bitcoinData: bitcoinResult,
+    btcTitle: bitcoinResult.data.ticker.base,
+    btcPrice: bitcoinResult.data.ticker.price,
+    btcVolume: bitcoinResult.data.ticker.volume,
+
   })
+})
+axios.get(ETHEREUM_API)
+.then(ethResult => {
+ // console.log(ethResult)
+this.setState({
+  ethData: ethResult,
+  ethTitle: ethResult.data.ticker.base,
+  ethPrice: ethResult.data.ticker.price,
+  ethVolume: ethResult.data.ticker.volume,
+
+})
+})
+axios.get(RIPPLE_API)
+.then(xrpResult => {
+ // console.log(xrpResult)
+this.setState({
+  xrpData: xrpResult,
+  xrpTitle: xrpResult.data.ticker.base,
+  xrpPrice: xrpResult.data.ticker.price,
+  xrpVolume: xrpResult.data.ticker.volume,
+
+})
 })
   }
 
   render() {
-    const {consolidatedWeather, weatherCityName, lattLong, locationType} = this.state;
+    const {consolidatedWeather, weatherCityName, lattLong, locationType, 
+          bitcoinData, btcTitle, btcPrice, btcVolume,
+          ethData, ethTitle, ethPrice, ethVolume,
+          xrpData, xrpTitle, xrpPrice, xrpVolume,
+        
+        } = this.state;
     console.log(consolidatedWeather);
     return (
       <div className="Component">
@@ -64,17 +111,21 @@ export default class Dashboard extends Component {
                   movieGenre={"Static genre"}
 />
             {/* Crypto Card */}
-            <Crypto cryptoTitle={'Crypto'}
-                  cryptoBTC={'BTC'}
-                  BTCprice={'1102020543253464575'}
-                  BTCvolume={'324567875645.413254365'}
-                  cryptoETH={'ETH'}
-                  ETHprice={'12345'}
-                  ETHvolume={'65.413254365'}
-                  cryptoXRP={'XRP'}
-                  XRPprice={'5234365476'}
-                  XRPvolume={'524365'}
-/>
+            {
+              (bitcoinData !== undefined || ethData !== undefined || xrpData !== undefined) ? 
+              <Crypto cryptoTitle={'Crypto'}
+                  cryptoBTC={btcTitle}
+                  BTCprice={btcPrice}
+                  BTCvolume={btcVolume}
+                  cryptoETH={ethTitle}
+                  ETHprice={ethPrice}
+                  ETHvolume={ethVolume}
+                  cryptoXRP={xrpTitle}
+                  XRPprice={xrpPrice}
+                  XRPvolume={xrpVolume}
+/>  : <div>Shit not working </div>
+            }
+
             {/* Random fact Card */}
             <Facts factTitle={'Random Fact Of The Day'}
                   factText={'geriojfoigjnrejg jgeroijngverijngdjk gruengiernl'}

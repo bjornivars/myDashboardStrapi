@@ -13,7 +13,7 @@ export const DOG_API = 'https://random.dog/woof.json';
 export const JOBS_API = 'https://jobs.github.com/positions.json?description=react&location=oslo';
 
 // Strapi API
-export const STRAPI_API = 'http://localhost:1337/';
+export const STRAPI_API = 'http://localhost:1337/Bjornivars';
 
 // TV API
 export const TV_API = 'http://api.tvmaze.com/singlesearch/shows?q=sons%20of%20anarachy';
