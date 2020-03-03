@@ -1,11 +1,9 @@
-import React, { Component } from 'react';
+import React, * as react from 'react';
 import Header from '../components/header';
 import Profile from '../components/profile';
 
 
-
-
-export default class ProfileSpecific extends Component {
+export default class ProfileSpecific extends react.Component {
   state = {
     profile: undefined
   }

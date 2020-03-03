@@ -41,4 +41,3 @@ export default class BlogSpecific extends Component {
   }
 }
 
-{/* http://localhost:1337/blogs */ }

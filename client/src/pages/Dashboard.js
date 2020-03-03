@@ -6,14 +6,7 @@ import Weather from '../components/weather';
 import Crypto from '../components/crypto';
 
 
-
-
-
-
 export default class Dashboard extends Component {
-
-
-
   render() {
     return (
       <div className="Component">

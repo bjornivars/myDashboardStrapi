@@ -5,7 +5,7 @@ const Weather = (prop) => {
         <>
 <div className="col-md-12">
 <div className="card">
-  <img className="card-img-top weather" src="https://image.shutterstock.com/image-vector/sun-icon-260nw-411668686.jpg" alt="Card image cap" />
+  <img className="card-img-top weather" src="https://image.shutterstock.com/image-vector/sun-icon-260nw-411668686.jpg" alt="Card cap" />
   <div className="card-body">
     <h5 className="card-title">{prop.weatherTitle}</h5>
     <ul>
@@ -34,7 +34,3 @@ const Weather = (prop) => {
 }
 export default Weather;
 
-
-{/* 
-    https://www.metaweather.com/api/location/862592/
-*/}
