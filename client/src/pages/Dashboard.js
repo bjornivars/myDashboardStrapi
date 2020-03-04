@@ -131,7 +131,7 @@ export default class Dashboard extends react.Component {
                       case 'Hail':
                         icon = <img className="weatherImage" src="https://www.metaweather.com/static/img/weather/h.svg" alt="Thunderstorm" />
                         break;
-                      case 'Thunderstorm':
+                      case 'Thunder':
                         icon = <img className="weatherImage" src="https://www.metaweather.com/static/img/weather/t.svg" alt="Thunderstorm" />
                         break;
                       case 'Heavy Rain':
