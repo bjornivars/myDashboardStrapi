@@ -2,7 +2,7 @@ import React, * as react from 'react';
 import Header from '../components/header';
 import Profile from '../components/profile';
 import axios from 'axios';
-import { STRAPI_API } from '../Constants';
+import { STRAPI_PROFILE_API } from '../Constants';
 
 
 export default class ProfileSpecific extends react.Component {
@@ -11,7 +11,7 @@ export default class ProfileSpecific extends react.Component {
   }
 
   componentDidMount() {
-    axios.get(STRAPI_API)
+    axios.get(STRAPI_PROFILE_API)
       .then(result => {
         console.log(result)
         this.setState({
@@ -32,7 +32,7 @@ export default class ProfileSpecific extends react.Component {
           logout={'Logout'}
         />
 
-        <h1 className="text-center headerPadding mb-5">ProfileSpecific.js</h1>
+        <h1 className="text-center pt-8 mb-5">My Profile</h1>
         {
           (profile !== undefined) ?
             profile.map((value, index) => {
@@ -41,6 +41,7 @@ export default class ProfileSpecific extends react.Component {
                 age={value.Age}
                 skills={value.Skills}
                 email={value.Email}
+                Image={'http://localhost:1337/' + value.ImageOfMe.url}
               />
             }) :
             <div>No Information</div>

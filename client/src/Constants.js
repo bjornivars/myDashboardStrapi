@@ -13,7 +13,10 @@ export const FACT_API = 'https://uselessfacts.jsph.pl/today.json?language=en';
 export const JOBS_API = 'https://jobs.github.com/positions.json?description=react';
 
 // Strapi API
-export const STRAPI_API = 'http://localhost:1337/Bjornivars';
+export const STRAPI_PROFILE_API = 'http://localhost:1337/Bjornivars';
+
+// Strapi Profile API
+export const STRAPI_BLOG_API = 'http://localhost:1337/Blogs';
 
 // TV API
 export const TV_API = 'http://api.tvmaze.com/shows';
