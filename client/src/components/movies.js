@@ -1,50 +1,21 @@
 import React from 'react';
-import { Link } from "react-router-dom";
 
-const Movies = (prop) => {
-    return(
+const Movies = (props) => {
+    // console.log(props)
+    return (
         <>
-
-<div className="col-md-12 d-flex justify-content-between mb-5">
-    <div className="card no-border col-md-3 ">
-    <img className="card-img-top" src={prop.movieImage} alt="Card cap" />
-    <div className="card-body">
-        <h5 className="card-title">{prop.movieTitle}</h5>
-        <p className="card-text">{prop.movieText}</p>
-        <p className="card-text">{prop.movieGenre}</p>
-        <Link className="btn btn-primary" to="#">Watch</Link>
-    </div>
-    </div>
-
-    <div className="card no-border col-md-3 ">
-    <img className="card-img-top" src={prop.movieImage} alt="Card cap" />
-    <div className="card-body">
-        <h5 className="card-title">{prop.movieTitle}</h5>
-        <p className="card-text">{prop.movieText}</p>
-        <p className="card-text">{prop.movieGenre}</p>
-        <Link className="btn btn-primary" to="#">Watch</Link>
-    </div>
-    </div>
-
-    <div className="card no-border col-md-3 ">
-    <img className="card-img-top" src={prop.movieImage} alt="Card cap" />
-    <div className="card-body">
-        <h5 className="card-title">{prop.movieTitle}</h5>
-        <p className="card-text">{prop.movieText}</p>
-        <p className="card-text">{prop.movieGenre}</p>
-        <Link className="btn btn-primary" to="#">Watch</Link>
-    </div>
-    </div>
-
-</div>
-
-
-
-
-
-
-           
-    </>
+            <div className="col-md-3 mt-3 moviesCard">
+                <div className="card">
+                    <img className="card-img-top" src={props.image} alt="Card cap" />
+                    <div className="card-body p-3">
+                        <h5 className="card-title">{props.name}</h5>
+                        <p className="card-text">{props.summary}</p>
+                        <p className="card-text">{props.genres}</p>
+                        <a className="btn btn-primary" href={props.url} target="_blank" rel="noopener noreferrer">Watch</a>
+                    </div>
+                </div>
+            </div>
+        </>
     );
 }
 

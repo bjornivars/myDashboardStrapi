@@ -1,13 +1,12 @@
 import React from 'react';
 
 const Login = (prop) => {
-    return(
+    return (
         <>
-        <div>
-            <h2>{prop.loginTitle}</h2>
-            <p>{prop.loginText}</p>
-        </div>
-
+            <div>
+                <h2>{prop.loginTitle}</h2>
+                <p>{prop.loginText}</p>
+            </div>
         </>
     )
 }

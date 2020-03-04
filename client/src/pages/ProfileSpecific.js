@@ -8,55 +8,44 @@ import { STRAPI_API } from '../Constants';
 export default class ProfileSpecific extends react.Component {
   state = {
     profile: undefined,
-    name: "no name yet",
-    age: undefined,
-    email: undefined,
   }
 
-  componentDidMount(){
+  componentDidMount() {
     axios.get(STRAPI_API)
-    .then(result => {
-      console.log(result)
-    this.setState({
-      profile: result.data,
-      name: result.data.Name,
-      age: result.data.Age,
-      email: result.data.Email,
-
-    })
-  })
+      .then(result => {
+        console.log(result)
+        this.setState({
+          profile: result.data,
+        })
+      })
   }
   render() {
-    const {profile, name, age, email,
-    
-    } = this.state;
-console.log(profile);
+    const { profile } = this.state;
+    console.log(profile);
     return (
-        <div className="ProfileSpecific">
+      <div className="ProfileSpecific">
 
-        <Header dashboardlink={'Dashboard'} 
-                bloglink={'Blog'}
-                joblink={'Jobs'}
-                profilelink={'Profile'}
-                logout={'Logout'}
+        <Header dashboardlink={'Dashboard'}
+          bloglink={'Blog'}
+          joblink={'Jobs'}
+          profilelink={'Profile'}
+          logout={'Logout'}
         />
 
-
-<h1 className="text-center headerPadding mb-5">ProfileSpecific.js</h1>
-
+        <h1 className="text-center headerPadding mb-5">ProfileSpecific.js</h1>
         {
-        (profile !== undefined) ?
-        profile.map((value, index) => {
-          console.log(profile[0].id);
-          return <Profile key={index}
-              profileTitle={name}
-              age={age}
-              email={email}
-            /> 
-        }) :
-        <div>No Information</div>
-      }
-        </div>
+          (profile !== undefined) ?
+            profile.map((value, index) => {
+              return <Profile key={index}
+                profileTitle={value.Name}
+                age={value.Age}
+                skills={value.Skills}
+                email={value.Email}
+              />
+            }) :
+            <div>No Information</div>
+        }
+      </div>
     );
   }
 }

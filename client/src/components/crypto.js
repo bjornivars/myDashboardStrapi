@@ -1,33 +1,19 @@
 import React from 'react';
 
 const Crypto = (prop) => {
-
-    return(
+    return (
         <>
-
-<div className="col-md-12 mb-5">
-<div className="card col-md-12">
-  <div className="card-body">
-    <h2 className="card-title">{prop.cryptoTitle}</h2>
-    <div>
-        <h3>{prop.cryptoBTC}</h3>
-        <p>Price: {prop.BTCprice}</p>
-        <p>Volume: {prop.BTCvolume}</p>
-    </div>
-    <div>
-        <h3>{prop.cryptoETH}</h3>
-        <p>Price: {prop.ETHprice}</p>
-        <p>Volume: {prop.ETHvolume}</p>
-    </div>
-    <div>
-        <h3>{prop.cryptoXRP}</h3>
-        <p>Price: {prop.XRPprice}</p>
-        <p>Volume: {prop.XRPvolume}</p>
-    </div>
-  </div>
-</div>
-</div>
-    </>
+            <div className="col-md-3 mt-3">
+                <div className="card">
+                    <div className="card-body p-3">
+                        <h5 className="card-title">Crypto Currency</h5>
+                        <h3>{prop.cryptoName}</h3>
+                        <p>Price: {prop.cryptoPrice}</p>
+                        <p>Volume: {prop.cryptoPrice}</p>
+                    </div>
+                </div>
+            </div>
+        </>
     );
 }
 
