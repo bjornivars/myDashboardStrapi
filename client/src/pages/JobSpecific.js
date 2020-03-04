@@ -9,10 +9,6 @@ export default class JobSpecific extends react.Component {
 
   state = {
     allJobs: undefined,
-    jobId: undefined,
-    jobLogo: "there is no logo for this company",
-    jobTitle: "no title yet",
-    jobDescription: "no description yet"
 
   }
 
@@ -22,17 +18,14 @@ export default class JobSpecific extends react.Component {
       console.log(result)
       this.setState({
         allJobs: result.data,
-        jobId: result.data.id,
-        jobLogo: "no logo",
-        jobTitle: result.data.title,
-        jobDescription: result.data.description,
+
       })
     })
   }
 
   render() {
-    const {allJobs, jobId, jobTitle, jobDescription} = this.state;
-    console.log(jobId);
+    const {allJobs} = this.state;
+    // console.log(allJobs);
     return (
         <div className="JobSpecific">
                 <Header dashboardlink={'Dashboard'} 
@@ -47,9 +40,9 @@ export default class JobSpecific extends react.Component {
               (allJobs !== undefined) ?
               allJobs.map((value, index) => {
                 return  <JobCard key={index}
-                jobTitle={jobTitle}
+                jobTitle={value.title}
                 jobLogo={'https://seeklogo.com/images/R/react-logo-7B3CE81517-seeklogo.com.png'}
-                jobDescription={jobDescription}
+                jobDescription={value.description}
                 how_to_apply={ 'Apply here '}
                 />
               })

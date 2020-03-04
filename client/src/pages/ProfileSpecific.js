@@ -47,6 +47,7 @@ console.log(profile);
         {
         (profile !== undefined) ?
         profile.map((value, index) => {
+          console.log(profile[0].id);
           return <Profile key={index}
               profileTitle={name}
               age={age}
