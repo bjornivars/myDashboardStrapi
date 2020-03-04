@@ -10,7 +10,7 @@ export const WEATHER_API = 'https://www.metaweather.com/api/location/862592/';
 export const FACT_API = 'https://uselessfacts.jsph.pl/today.json?language=en';
 
 // Jobs API
-export const JOBS_API = 'https://jobs.github.com/positions.json?description=react&location=oslo';
+export const JOBS_API = 'https://jobs.github.com/positions.json?description=react';
 
 // Strapi API
 export const STRAPI_API = 'http://localhost:1337/Bjornivars';

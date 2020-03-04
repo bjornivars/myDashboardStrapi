@@ -32,21 +32,32 @@ export default class JobSpecific extends react.Component {
           profilelink={'Profile'}
           logout={'Logout'}
         />
-        <h1 className="text-center headerPadding mb-5">JobSpecific.js</h1>
-        {
-          (allJobs !== undefined) ?
-            allJobs.map((value, index) => {
-              return <JobCard key={index}
-                jobTitle={value.title}
-                jobLogo={'https://seeklogo.com/images/R/react-logo-7B3CE81517-seeklogo.com.png'}
-                jobDescription={value.description}
-                how_to_apply={'Apply here '}
-              />
-            })
-            :
-            <div>No information for you dick</div>
-        }
+
+<div className="container-fluid">
+<div className="row d-flex justify-content-between">
+            <div className="row col-md-12 d-flex ">
+              {/* Jobs Card */}
+              <h2 className="col-md-12 headerPadding">Jobs Mr. Worldwide</h2>
+              {
+                (allJobs !== undefined) ?
+                  allJobs.map((value, index) => {
+                    return <JobCard key={index}
+                      title={value.title}
+                      company_logo={value.company_logo}
+                      company={value.company}
+                      type={value.type}
+                      location={value.location}
+                      description={value.description}
+                      company_url={value.company_url}
+                    />
+                  }) : <div>No information for you dick</div>
+              }
+            </div>
+          </div>
       </div>
+</div>
+
+
     );
   }
 }
