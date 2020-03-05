@@ -17,8 +17,8 @@
     "Blog": {
       "type": "text"
     },
-    "Images": {
-      "collection": "file",
+    "Image": {
+      "model": "file",
       "via": "related",
       "plugin": "upload"
     },
