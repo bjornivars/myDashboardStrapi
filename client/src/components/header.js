@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import removeToken from '../pages/Login';
+// import {logoutUser} from '../App';
 
-const Navbar = (props) => {
+const Navbar = () => {
   return (
     <div>
 
@@ -24,9 +24,6 @@ const Navbar = (props) => {
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/profile-specific/">{'Profile'}</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/">{'Logout'}</Link>
             </li>
           </ul>
         </div>

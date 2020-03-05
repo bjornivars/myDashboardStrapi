@@ -38,10 +38,7 @@ export default class Login extends Component {
       })
   }
 
-   removeToken() {
-    sessionStorage.removeItem("token");
-    window.location.reload();
-  }
+
   render() {
     return (
       <div className="container-fluid">

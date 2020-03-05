@@ -33,9 +33,10 @@ export default class App extends Component {
   }
 
   logoutUser = () => {
-
-    sessionStorage.removeItem("token");
-    window.location.reload();
+    this.setState({
+      isLoggedIn: false,
+    })
+    sessionStorage.clear();
   }
 
   render() {
@@ -44,9 +45,10 @@ export default class App extends Component {
       <div className="App">
         <Header />
           {this.props.children}
+          <button className="btn btn-primary" onClick={this.logoutUser}>Log out</button>
 
       </div>
-    ): (
+    ) : (
       <Login updateLoginStatus={this.updateLogin} />
     )
   }

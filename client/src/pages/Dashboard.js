@@ -1,6 +1,6 @@
 import React, * as react from 'react';
 import axios from 'axios';
-import Header from '../components/header';
+import Navbar from '../components/header';
 import Movies from '../components/movies';
 import Facts from '../components/fact';
 import Weather from '../components/weather';
@@ -27,7 +27,8 @@ export default class Dashboard extends react.Component {
 
     moviesData: undefined,
 
-    factData: undefined
+    factData: undefined,
+
   }
 
   componentDidMount() {
@@ -76,6 +77,8 @@ export default class Dashboard extends react.Component {
       })
   }
 
+
+
   render() {
     const { consolidatedWeather, weatherCityName,
       btcData, ethData, xrpData,
@@ -86,13 +89,21 @@ export default class Dashboard extends react.Component {
     return (
       <div className="Component">
 
-        <Header />
+        <Navbar />
         <h1 className="mb-3 headerPadding">Dashboard.js</h1>
 
         <div className="DashBoard container-fluid">
           <div className="row d-flex justify-content-between">
             <div className="row col-md-12 d-flex ">
               {/* Movies Card */}
+              <form onSubmit={this.handleSubmit}>
+                <input type='text'
+                       name='search'
+                       onChange={this.handleChange}
+                       className='form-control'
+                />
+                <input type='submit' className='btn btn-primary' />
+              </form>
               <h2 className="col-md-12 mt-5">Top 4 Series this week!</h2>
               {
                 (moviesData !== undefined) ?

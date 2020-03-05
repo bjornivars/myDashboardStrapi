@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Header from '../components/header';
+import Navbar from '../components/header';
 import Blog from '../components/blog';
 import axios from 'axios';
 import { STRAPI_BLOG_API } from '../Constants';
@@ -25,7 +25,7 @@ export default class BlogSpecific extends Component {
     console.log(Blogs);
     return (
       <div className="BlogSpecific">
-        <Header />
+        <Navbar />
         <h1 className="text-center pt-8 mb-5">My Random Blog</h1>
         {
           (Blogs !== undefined) ?

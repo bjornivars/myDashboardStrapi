@@ -1,5 +1,5 @@
 import React, * as react from 'react';
-import Header from '../components/header';
+import Navbar from '../components/header';
 import Profile from '../components/profile';
 import axios from 'axios';
 import { STRAPI_PROFILE_API } from '../Constants';
@@ -25,7 +25,7 @@ export default class ProfileSpecific extends react.Component {
     return (
       <div className="ProfileSpecific">
 
-        <Header />
+        <Navbar />
 
         <h1 className="text-center pt-8 mb-5">My Profile</h1>
         {

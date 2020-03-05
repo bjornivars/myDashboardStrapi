@@ -1,6 +1,6 @@
 import React, * as react from 'react';
 import axios from 'axios';
-import Header from '../components/header';
+import Navbar from '../components/header';
 import JobCard from '../components/jobs';
 import { HEROKU_BYPASS_CORS } from '../Constants';
 import { JOBS_API } from '../Constants';
@@ -26,7 +26,7 @@ export default class JobSpecific extends react.Component {
     // console.log(allJobs);
     return (
       <div className="JobSpecific">
-        <Header />
+        <Navbar />
 
         <div className="container-fluid">
           <div className="row d-flex justify-content-between">
