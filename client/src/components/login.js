@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Login = (prop) => {
+const Login = (props) => {
     return (
         <>
             <div>
-                <h2>{prop.loginTitle}</h2>
-                <p>{prop.loginText}</p>
+                <h2>{props.loginTitle}</h2>
+                <p>{props.loginText}</p>
             </div>
         </>
     )

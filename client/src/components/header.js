@@ -25,7 +25,7 @@ const Navbar = (props) => {
               <Link className="nav-link" to="/profile-specific/">{props.profilelink}</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link disabled" to="/logout-specific/">{props.logout}</Link>
+              <Link className="nav-link" to="/login-specific/">{props.login}</Link>
             </li>
           </ul>
         </div>

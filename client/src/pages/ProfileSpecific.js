@@ -29,7 +29,7 @@ export default class ProfileSpecific extends react.Component {
           bloglink={'Blog'}
           joblink={'Jobs'}
           profilelink={'Profile'}
-          logout={'Logout'}
+          login={'Login'}
         />
 
         <h1 className="text-center pt-8 mb-5">My Profile</h1>

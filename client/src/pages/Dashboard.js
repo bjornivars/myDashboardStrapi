@@ -90,7 +90,7 @@ export default class Dashboard extends react.Component {
           bloglink={'Blog'}
           joblink={'Jobs'}
           profilelink={'Profile'}
-          logout={'Logout'}
+          login={'Login'}
         />
         <h1 className="mb-3 headerPadding">Dashboard.js</h1>
 

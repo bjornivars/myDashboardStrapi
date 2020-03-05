@@ -1,9 +1,9 @@
-import React, * as react from 'react';
+import React, { Component } from 'react';
 import Header from '../components/header';
-import Login from '../components/header';
+import Login from '../components/login';
 
 
-export default class LoginSpecific extends react.Component {
+export default class LoginSpecific extends Component {
   render() {
     return (
       <div className="LoginSpecific">
@@ -11,8 +11,9 @@ export default class LoginSpecific extends react.Component {
           bloglink={'Blog'}
           joblink={'Jobs'}
           profilelink={'Profile'}
-          logout={'Logout'}
+          login={'Login'}
         />
+     
         <h1>LoginSpecific.js</h1>
         <img src={"https://image.freepik.com/free-vector/login-template_1017-6719.jpg"} alt="Login" />
 

@@ -30,7 +30,7 @@ export default class JobSpecific extends react.Component {
           bloglink={'Blog'}
           joblink={'Jobs'}
           profilelink={'Profile'}
-          logout={'Logout'}
+          login={'Login'}
         />
 
 <div className="container-fluid">
