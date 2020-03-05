@@ -26,15 +26,10 @@ export default class JobSpecific extends react.Component {
     // console.log(allJobs);
     return (
       <div className="JobSpecific">
-        <Header dashboardlink={'Dashboard'}
-          bloglink={'Blog'}
-          joblink={'Jobs'}
-          profilelink={'Profile'}
-          login={'Login'}
-        />
+        <Header />
 
-<div className="container-fluid">
-<div className="row d-flex justify-content-between">
+        <div className="container-fluid">
+          <div className="row d-flex justify-content-between">
             <div className="row col-md-12 d-flex ">
               {/* Jobs Card */}
               <h2 className="col-md-12 headerPadding">Jobs Mr. Worldwide</h2>
@@ -54,8 +49,8 @@ export default class JobSpecific extends react.Component {
               }
             </div>
           </div>
+        </div>
       </div>
-</div>
 
 
     );

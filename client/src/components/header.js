@@ -13,19 +13,19 @@ const Navbar = (props) => {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <Link className="nav-link" to="/">{props.dashboardlink}</Link>
+              <Link className="nav-link" to="/">{"Dashboard"}</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/blog-specific/">{props.bloglink}</Link>
+              <Link className="nav-link" to="/blog-specific/">{'Blog'}</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/job-specific/">{props.joblink}</Link>
+              <Link className="nav-link" to="/job-specific/">{'Jobs'}</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/profile-specific/">{props.profilelink}</Link>
+              <Link className="nav-link" to="/profile-specific/">{'Profile'}</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/login-specific/">{props.login}</Link>
+              <Link className="nav-link" to="/">{'Logout'}</Link>
             </li>
           </ul>
         </div>

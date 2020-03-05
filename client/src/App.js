@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 // import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './scss/styles.scss';
+import Login from './pages/Login';
+import Header from './components/header';
+
 
 /*
 import Movies from './components/movies';
@@ -18,14 +21,26 @@ import Login from './components/login';
 
 
 export default class App extends Component {
-  render() {
-    return (
-      <div className="App">
+  state = {
+    isLoggedIn: true,
 
-      {this.props.children}
+  }
+
+  updateLogin = () => {
+    this.setState({
+      isLoggedIn: true,
+    })
+  }
+  render() {
+    return (sessionStorage.getItem('token') !== null && this.state.isLoggedIn) ? 
+    ( 
+      <div className="App">
+        <Header />
+          {this.props.children}
 
       </div>
-
-    );
+    ): (
+      <Login updateLoginStatus={this.updateLogin} />
+    )
   }
 }

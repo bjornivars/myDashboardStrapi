@@ -11,7 +11,6 @@ import Dashboard from './pages/Dashboard';
 import BlogSpecific from './pages/BlogSpecific';
 import JobSpecific from './pages/JobSpecific';
 import ProfileSpecific from './pages/ProfileSpecific';
-import LoginSpecific from './pages/LoginSpecific';
 
 
 import * as serviceWorker from './serviceWorker';
@@ -25,7 +24,6 @@ ReactDOM.render(
                 <Route path="/blog-specific/" component={BlogSpecific} />
                 <Route path="/profile-specific/" component={ProfileSpecific} />
                 <Route path="/job-specific/" component={JobSpecific} />
-                <Route path="/login-specific/" component={LoginSpecific} />
             </Switch>
         </App>
     </Router>,

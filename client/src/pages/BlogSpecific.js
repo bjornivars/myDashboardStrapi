@@ -19,18 +19,13 @@ export default class BlogSpecific extends Component {
         })
       })
   }
-
+  
   render() {
     const { Blogs } = this.state;
     console.log(Blogs);
     return (
       <div className="BlogSpecific">
-        <Header dashboardlink={'Dashboard'}
-          bloglink={'Blog'}
-          joblink={'Jobs'}
-          profilelink={'Profile'}
-          login={'Login'}
-        />
+        <Header />
         <h1 className="text-center pt-8 mb-5">My Random Blog</h1>
         {
           (Blogs !== undefined) ?

@@ -25,12 +25,7 @@ export default class ProfileSpecific extends react.Component {
     return (
       <div className="ProfileSpecific">
 
-        <Header dashboardlink={'Dashboard'}
-          bloglink={'Blog'}
-          joblink={'Jobs'}
-          profilelink={'Profile'}
-          login={'Login'}
-        />
+        <Header />
 
         <h1 className="text-center pt-8 mb-5">My Profile</h1>
         {

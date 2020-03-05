@@ -86,12 +86,7 @@ export default class Dashboard extends react.Component {
     return (
       <div className="Component">
 
-        <Header dashboardlink={'Dashboard'}
-          bloglink={'Blog'}
-          joblink={'Jobs'}
-          profilelink={'Profile'}
-          login={'Login'}
-        />
+        <Header />
         <h1 className="mb-3 headerPadding">Dashboard.js</h1>
 
         <div className="DashBoard container-fluid">
