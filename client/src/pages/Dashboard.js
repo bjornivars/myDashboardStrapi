@@ -29,6 +29,7 @@ export default class Dashboard extends react.Component {
 
     factData: undefined,
 
+    searchData: '',
   }
 
   componentDidMount() {
@@ -70,14 +71,31 @@ export default class Dashboard extends react.Component {
       })
     axios.get(FACT_API)
       .then(factResult => {
-        console.log(factResult)
+        // console.log(factResult)
         this.setState({
           factData: factResult.data,
         })
       })
+      axios.get(HEROKU_BYPASS_CORS + TV_API)
+      .then(searchResult => {
+        console.log(searchResult)
+        this.setState({
+          searchData: searchResult.data,
+        })
+      })
   }
 
+  handleChange = (input) => {
+    // console.log('event.target', input.target)
 
+    // console.log('this.state', this.state)
+  }
+
+ handleSubmit = (event) => {
+  event.preventDefault();
+
+      // console.log('this.state', this.state)
+ }
 
   render() {
     const { consolidatedWeather, weatherCityName,
@@ -97,13 +115,14 @@ export default class Dashboard extends react.Component {
             <div className="row col-md-12 d-flex ">
               {/* Movies Card */}
               <form onSubmit={this.handleSubmit}>
-                <input type='text'
-                       name='search'
-                       onChange={this.handleChange}
-                       className='form-control'
-                />
-                <input type='submit' className='btn btn-primary' />
-              </form>
+        <input
+          placeholder="Search for..."
+          name="search"
+          onChange={this.handleChange}
+          className="form-control"
+        /> 
+        <input type='submit' />
+      </form>
               <h2 className="col-md-12 mt-5">Top 4 Series this week!</h2>
               {
                 (moviesData !== undefined) ?

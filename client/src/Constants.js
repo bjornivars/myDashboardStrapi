@@ -6,7 +6,7 @@ export const RIPPLE_API = 'https://api.cryptonator.com/api/ticker/xrp-usd';
 // Weather API
 export const WEATHER_API = 'https://www.metaweather.com/api/location/862592/';
 
-// Dog API
+// Fact API
 export const FACT_API = 'https://uselessfacts.jsph.pl/today.json?language=en';
 
 // Jobs API

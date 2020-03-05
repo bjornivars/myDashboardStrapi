@@ -44,9 +44,8 @@ export default class App extends Component {
     ( 
       <div className="App">
         <Header />
+        <button className="btn btn-primary pt-5" onClick={this.logoutUser}>Log out</button>
           {this.props.children}
-          <button className="btn btn-primary" onClick={this.logoutUser}>Log out</button>
-
       </div>
     ) : (
       <Login updateLoginStatus={this.updateLogin} />
