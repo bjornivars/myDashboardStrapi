@@ -37,6 +37,11 @@ export default class Login extends Component {
         console.log('An error occurred: ', error)
       })
   }
+
+   removeToken() {
+    sessionStorage.removeItem("token");
+    window.location.reload();
+  }
   render() {
     return (
       <div className="container-fluid">

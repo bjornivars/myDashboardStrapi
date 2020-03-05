@@ -31,6 +31,13 @@ export default class App extends Component {
       isLoggedIn: true,
     })
   }
+
+  logoutUser = () => {
+
+    sessionStorage.removeItem("token");
+    window.location.reload();
+  }
+
   render() {
     return (sessionStorage.getItem('token') !== null && this.state.isLoggedIn) ? 
     ( 
