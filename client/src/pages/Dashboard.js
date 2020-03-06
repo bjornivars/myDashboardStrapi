@@ -1,6 +1,5 @@
 import React, * as react from 'react';
 import axios from 'axios';
-import Navbar from '../components/header';
 import Movies from '../components/movies';
 import Facts from '../components/fact';
 import Weather from '../components/weather';
@@ -28,10 +27,11 @@ export default class Dashboard extends react.Component {
 
     moviesData: undefined,
 
-    factData: undefined,
-
+    movieHeading: 'Search for show by name',
     searchValue: '',
     searchedData: undefined,
+
+    factData: undefined,
   }
 
   componentDidMount() {
@@ -85,84 +85,67 @@ export default class Dashboard extends react.Component {
     this.setState({
       searchValue: input.target.value,
     })
-    }
-
-
- handleOnSubmit = (event) => {
-  event.preventDefault();
-  console.log('Click happened');
-
-  axios.get(TV_SEARCH_API + this.state.searchValue)
-  //console.log(this.state.searchValue);
-  .then(searched => {
-    console.log("searched", searched)
-    this.setState({
-      searchedData: searched.data,
-    })
-  })
-  .catch(error => {
-    console.log('An error occurred: ', error)
-  })
   }
 
+  handleOnSubmit = (event) => {
+    event.preventDefault();
+    console.log('Click happened');
 
- 
+    axios.get(TV_SEARCH_API + this.state.searchValue)
+      //console.log(this.state.searchValue);
+      .then(searched => {
+        console.log("searched", searched)
+        this.setState({
+          searchedData: searched.data,
+        })
+      })
+      .catch(error => {
+        console.log('An error occurred: ', error)
+      })
+  }
 
   render() {
     const { consolidatedWeather, weatherCityName,
       btcData, ethData, xrpData,
-      moviesData, searchedData,
+      moviesData, searchedData, movieHeading,
       factData
     } = this.state;
     //console.log(btcData);
     return (
       <div className="Component">
-
-        <Navbar />
         <h1 className="mb-3 headerPadding">Dashboard.js</h1>
-
         <div className="DashBoard container-fluid">
           <div className="row d-flex justify-content-between">
             <div className="row col-md-12 d-flex ">
               {/* Movies Card */}
-              <form onSubmit={this.handleOnSubmit}>
-        <input
-          type="text"
-          placeholder="Search for..."
-          name="searchValue"
-          onChange={this.handleOnChange}
-          className="form-control"
-        /> 
-        <input type='submit' />
-      </form>
-
-
-
-      <h2 className="col-md-12 mt-5">Testing search</h2>
-{
-  (searchedData !== undefined) ?
-  searchedData.map((value, index) => {
-    let img;
-    (value.show.image !== null) ? img = value.show.image.medium : img = "https://via.placeholder.com/150"; 
-    return <Movies key={index}
-      name={value.show.name}
-      image={img}
-      genres={value.show.genres[0]}
-      url={value.show.url}
-    />
-  }) : <div>No testing results</div>
-}
-
-
-
-
-
-
-
-
-
-
-
+              <h2 className="col-md-12 mt-3 mb-3">{movieHeading}</h2>
+              <div className="row col-md-12 d-flex ">
+              <form onSubmit={this.handleOnSubmit} className="d-flex justify-content-center search-form" >
+                <input
+                  type="text"
+                  placeholder="Search for..."
+                  name="searchValue"
+                  onChange={this.handleOnChange}
+                  className="form-control "
+                />
+                <input type='submit' className="btn btn-primary" />
+              </form>
+              </div>
+              <div className="row col-md-12 d-flex ">
+              {
+                (searchedData !== undefined) ?
+                  searchedData.map((value, index) => {
+                    let img;
+                    (value.show.image !== null) ? img = value.show.image.medium : img = "https://via.placeholder.com/150";
+                    return <Movies key={index}
+                      name={value.show.name}
+                      image={img}
+                      genres={value.show.genres[0]}
+                      url={value.show.url}
+                    />
+                  }) : <div className="col-md-12"><p>No testing results</p></div>
+              }
+              </div>
 
               <h2 className="col-md-12 mt-5">Top 4 Series this week!</h2>
               {

@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './scss/styles.scss';
 import Login from './pages/Login';
-import Header from './components/header';
+import Navbar from './components/header';
 
 
 /*
@@ -43,7 +43,7 @@ export default class App extends Component {
     return (sessionStorage.getItem('token') !== null && this.state.isLoggedIn) ? 
     ( 
       <div className="App">
-        <Header />
+        <Navbar />        
         <button className="btn btn-primary pt-5" onClick={this.logoutUser}>Log out</button>
           {this.props.children}
       </div>
