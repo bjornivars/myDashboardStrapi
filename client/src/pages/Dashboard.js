@@ -31,6 +31,7 @@ export default class Dashboard extends react.Component {
     factData: undefined,
 
     searchValue: '',
+    searchedData: undefined,
   }
 
   componentDidMount() {
@@ -92,29 +93,21 @@ export default class Dashboard extends react.Component {
   console.log('Click happened');
 
   axios.get(TV_SEARCH_API + this.state.searchValue)
-  console.log(this.state.searchValue);
-  /*.then(searched => {
+  //console.log(this.state.searchValue);
+  .then(searched => {
     this.setState({
       searchedData: searched.data,
     })
-  })*/
+  })
   }
 
-  // console.log(test);
 
-  //.then(movieSearchResult => {
-    // console.log(movieSearchResult)
-   // this.setState({
-  //    searchValue: movieSearchResult.data,
-  //  })
-  //})
-  //console.log(this.handleOnSubmit)
  
 
   render() {
     const { consolidatedWeather, weatherCityName,
       btcData, ethData, xrpData,
-      moviesData,
+      moviesData, searchedData,
       factData
     } = this.state;
     //console.log(btcData);
@@ -138,6 +131,33 @@ export default class Dashboard extends react.Component {
         /> 
         <input type='submit' />
       </form>
+
+
+
+      <h2 className="col-md-12 mt-5">Testing search</h2>
+{
+  (searchedData !== undefined) ?
+  searchedData.map((value, index) => {
+    return <Movies key={index}
+      name={value.show.name}
+      image={value.show.image.original}
+      genres={value.show.genres[0]}
+      url={value.show.url}
+    />
+  }) : <div>No information for you dick</div>
+}
+
+
+
+
+
+
+
+
+
+
+
+
               <h2 className="col-md-12 mt-5">Top 4 Series this week!</h2>
               {
                 (moviesData !== undefined) ?
