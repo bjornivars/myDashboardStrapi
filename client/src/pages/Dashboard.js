@@ -12,6 +12,7 @@ import {
   ETHEREUM_API,
   RIPPLE_API,
   TV_API,
+  TV_SEARCH_API,
   FACT_API
 } from '../Constants';
 
@@ -29,7 +30,7 @@ export default class Dashboard extends react.Component {
 
     factData: undefined,
 
-    searchData: '',
+    searchValue: '',
   }
 
   componentDidMount() {
@@ -76,26 +77,39 @@ export default class Dashboard extends react.Component {
           factData: factResult.data,
         })
       })
-      axios.get(HEROKU_BYPASS_CORS + TV_API)
-      .then(searchResult => {
-        console.log(searchResult)
-        this.setState({
-          searchData: searchResult.data,
-        })
-      })
   }
 
-  handleChange = (input) => {
-    // console.log('event.target', input.target)
+  handleOnChange = (input) => {
+    //console.log('event.target', input.target)
+    this.setState({
+      searchValue: input.target.value,
+    })
+    }
 
-    // console.log('this.state', this.state)
-  }
 
- handleSubmit = (event) => {
+ handleOnSubmit = (event) => {
   event.preventDefault();
+  console.log('Click happened');
 
-      // console.log('this.state', this.state)
- }
+  axios.get(TV_SEARCH_API + this.state.searchValue)
+  console.log(this.state.searchValue);
+  /*.then(searched => {
+    this.setState({
+      searchedData: searched.data,
+    })
+  })*/
+  }
+
+  // console.log(test);
+
+  //.then(movieSearchResult => {
+    // console.log(movieSearchResult)
+   // this.setState({
+  //    searchValue: movieSearchResult.data,
+  //  })
+  //})
+  //console.log(this.handleOnSubmit)
+ 
 
   render() {
     const { consolidatedWeather, weatherCityName,
@@ -114,11 +128,12 @@ export default class Dashboard extends react.Component {
           <div className="row d-flex justify-content-between">
             <div className="row col-md-12 d-flex ">
               {/* Movies Card */}
-              <form onSubmit={this.handleSubmit}>
+              <form onSubmit={this.handleOnSubmit}>
         <input
+          type="text"
           placeholder="Search for..."
-          name="search"
-          onChange={this.handleChange}
+          name="searchValue"
+          onChange={this.handleOnChange}
           className="form-control"
         /> 
         <input type='submit' />

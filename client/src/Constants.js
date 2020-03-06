@@ -23,6 +23,9 @@ export const STRAPI_BLOG_API = 'http://localhost:1337/Blogs';
 
 // TV API
 export const TV_API = 'http://api.tvmaze.com/shows';
+export const TV_SEARCH_API = 'http://api.tvmaze.com/search/shows?q=';
+
+
 
 // Bypass CORS
 export const HEROKU_BYPASS_CORS = 'https://cors-anywhere.herokuapp.com/';
