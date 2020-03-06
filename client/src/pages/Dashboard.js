@@ -95,9 +95,13 @@ export default class Dashboard extends react.Component {
   axios.get(TV_SEARCH_API + this.state.searchValue)
   //console.log(this.state.searchValue);
   .then(searched => {
+    console.log("searched", searched)
     this.setState({
       searchedData: searched.data,
     })
+  })
+  .catch(error => {
+    console.log('An error occurred: ', error)
   })
   }
 
@@ -138,13 +142,15 @@ export default class Dashboard extends react.Component {
 {
   (searchedData !== undefined) ?
   searchedData.map((value, index) => {
+    let img;
+    (value.show.image !== null) ? img = value.show.image.medium : img = "https://via.placeholder.com/150"; 
     return <Movies key={index}
       name={value.show.name}
-      image={value.show.image.original}
+      image={img}
       genres={value.show.genres[0]}
       url={value.show.url}
     />
-  }) : <div>No information for you dick</div>
+  }) : <div>No testing results</div>
 }
 
 
