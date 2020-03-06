@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const Profile = (props) => {
+const ProfileInfo = (props) => {
     return (
         <>
             <div className="row "> 
@@ -21,7 +21,7 @@ const Profile = (props) => {
     )
 }
 
-export default Profile;
+export default ProfileInfo;
 
 
 

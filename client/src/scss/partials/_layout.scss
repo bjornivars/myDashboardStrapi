@@ -1,4 +1,4 @@
-body{
+body {
     // background-color: #123140;
     background-color: #23373b;
     color: white;
@@ -6,78 +6,90 @@ body{
 
 
 
-.card{
+.card {
     background-color: transparent;
     border: 1px solid rgba(255, 255, 255, 0.5);
+
+    &-img-top {
+        height: 28em;
+    }
 }
 
-.btn{
-    &-primary{
-    background-color: #ca6600;
-    border-color: #ca6600;
+.btn {
+    &-primary {
+        background-color: #ca6600;
+        border-color: #ca6600;
+
+        &:hover {
+            background-color: #9c4e00;
+            border-color: #9c4e00;
+        }
+
+        &:focus {
+            background-color: #9c4e00;
+            border-color: #9c4e00;
+        }
     }
-    &-logout{
+
+    &-logout {
         width: 10%;
         margin-left: 90%;
         margin-top: 3.55em;
     }
 }
 
-.blogImg{
-    max-height: 40%!important;
+.blogImg {
+    max-height: 40% !important;
 }
 
-.headerPadding{
+.headerPadding {
     padding-left: 45px;
     margin-top: 2.5em;
 }
 
-.no-border{
+.no-border {
     border: 0;
 }
 
-.weatherImage{
+.weatherImage {
     width: 100%;
 
 }
 
-.companyLogo{
+.companyLogo {
     height: 11em;
 }
 
-.pt-8{
+.pt-8 {
     margin-top: 2.5em;
 }
 
-.search-form{
+.search-form {
     width: 50%;
     margin-left: 15px;
 }
 
-.profileCard{
+.profileCard {
     background-color: transparent;
     padding: 35px 0px 35px 0px;
     border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
-.searchResult{
+.searchResult {
     padding-left: 15px;
     flex-wrap: nowrap;
     overflow-x: scroll;
 }
 
-
-
-
-.test{
+.test {
     position: absolute;
     margin-left: 95%;
     top: 6.5em;
     z-index: 900;
-    color: #ca6600;
+    color: #fa7d00;
     font-size: 60px;
 }
 
-.padding-l-15{
+.padding-l-15 {
     padding-left: 15px;
 }

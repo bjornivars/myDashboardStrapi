@@ -8,9 +8,9 @@ import {
 import './index.css';
 import App from './App';
 import Dashboard from './pages/Dashboard';
-import BlogSpecific from './pages/BlogSpecific';
-import JobSpecific from './pages/JobSpecific';
-import ProfileSpecific from './pages/ProfileSpecific';
+import Blog from './pages/Blog';
+import Job from './pages/Job';
+import Profile from './pages/Profile';
 
 
 import * as serviceWorker from './serviceWorker';
@@ -21,9 +21,9 @@ ReactDOM.render(
         <App>
             <Switch>
                 <Route path="/" exact component={Dashboard} />
-                <Route path="/blog-specific/" component={BlogSpecific} />
-                <Route path="/profile-specific/" component={ProfileSpecific} />
-                <Route path="/job-specific/" component={JobSpecific} />
+                <Route path="/blog-specific/" component={Blog} />
+                <Route path="/profile-specific/" component={Profile} />
+                <Route path="/job-specific/" component={Job} />
             </Switch>
         </App>
     </Router>,

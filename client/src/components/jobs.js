@@ -2,8 +2,6 @@ import React from 'react';
 
 const JobCard = (props) => {
     return (
-
-
         <div className="col-md-3 mt-4 ">
         <div className="card">
             <img className="card-img-top companyLogo" src={props.company_logo} alt="Card cap" />
@@ -16,7 +14,6 @@ const JobCard = (props) => {
             </div>
         </div>
     </div>
-
     )
 };
 

@@ -42,9 +42,9 @@ export default class Login extends Component {
   render() {
     return (
       <div className="container-fluid">
-        <h1 className="text-center pt-8 mb-5">LoginSpecific.js</h1>
-        <div className="row">
-          <form onSubmit={this.handleSubmit}>
+        <h1 className="text-center pt-8 mb-5">Login</h1>
+        <div className="row m-auto">
+          <form onSubmit={this.handleSubmit} className="col-md-4 m-auto">
             <p>Enter a username</p>
             <input type='text'
               name='username'
@@ -52,6 +52,7 @@ export default class Login extends Component {
               className='form-control'
             />
             <br />
+            <p>Enter a password</p>
             <input type='password'
               name='password'
               onChange={this.handleChange}

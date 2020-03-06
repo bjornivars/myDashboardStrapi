@@ -30,7 +30,7 @@ export default class Dashboard extends react.Component {
     movieHeading: 'Search for show by name',
     searchValue: '',
     searchedData: undefined,
-    cameronIsTheMan: "",
+    searchResultName: "",
 
     factData: undefined,
 
@@ -100,7 +100,7 @@ export default class Dashboard extends react.Component {
         console.log("searched", searched)
         this.setState({
           searchedData: searched.data,
-          cameronIsTheMan: `Results for "${this.state.searchValue}"`,
+          searchResultName: `Results for "${this.state.searchValue}"`,
           showArrow: '',
 
         })
@@ -111,50 +111,50 @@ export default class Dashboard extends react.Component {
     const { consolidatedWeather, weatherCityName,
       btcData, ethData, xrpData,
       moviesData, searchedData, movieHeading,
-      factData, cameronIsTheMan, showArrow,
+      factData, searchResultName, showArrow,
     } = this.state;
     //console.log(btcData);
     return (
       <div className="Component">
-        <h1 className="mb-3 headerPadding">Dashboard.js</h1>
+        <h1 className="mb-3 headerPadding">Welcome back</h1>
         <div className="DashBoard container-fluid">
           <div className="row d-flex justify-content-between">
             <div className="row col-md-12 d-flex ">
               {/* Movies Card */}
               <h2 className="col-md-12 mt-3 mb-3">{movieHeading}</h2>
               <div className="row col-md-12 d-flex ">
-              <form onSubmit={this.handleOnSubmit} className="d-flex justify-content-center search-form" >
-                <input
-                  type="text"
-                  placeholder="Search for..."
-                  name="searchValue"
-                  onChange={this.handleOnChange}
-                  className="form-control "
-                />
-                <input type='submit' className="btn btn-primary" />
-              </form>
+                <form onSubmit={this.handleOnSubmit} className="d-flex justify-content-center search-form" >
+                  <input
+                    type="text"
+                    placeholder="Search for..."
+                    name="searchValue"
+                    onChange={this.handleOnChange}
+                    className="form-control "
+                  />
+                  <input type='submit' className="btn btn-primary" />
+                </form>
               </div>
-              <div className="mt-3 padding-l-15">{cameronIsTheMan}</div>
+              <div className="mt-3 padding-l-15">{searchResultName}</div>
 
               <div className="row d-flex searchResult">
-              {
-                showArrow !== undefined && <div><i className="fas fa-chevron-circle-right test"></i></div>
-              }
+                {
+                  showArrow !== undefined && <div><i className="fas fa-chevron-circle-right test"></i></div>
+                }
 
-              {
-                (searchedData !== undefined) ?
-                  searchedData.map((value, index) => {
-                    let img;
-                    (value.show.image !== null) ? img = value.show.image.medium : img = "https://via.placeholder.com/150";
-                    return <Movies key={index}
-                                    name={value.show.name}
-                                    image={img}
-                                    genres={value.show.genres[0]}
-                                    url={value.show.url}
-                          />
-                          
-                  }) : <div className="col-md-12"><p>No testing results</p></div>
-              }
+                {
+                  (searchedData !== undefined) ?
+                    searchedData.map((value, index) => {
+                      let img;
+                      (value.show.image !== null) ? img = value.show.image.medium : img = "https://via.placeholder.com/150";
+                      return <Movies key={index}
+                        name={value.show.name}
+                        image={img}
+                        genres={value.show.genres[0]}
+                        url={value.show.url}
+                      />
+
+                    }) : <div className="col-md-12"><p>No search results</p></div>
+                }
               </div>
               <h2 className="col-md-12 mt-5">Top 4 Series this week!</h2>
               {
@@ -166,7 +166,7 @@ export default class Dashboard extends react.Component {
                       genres={value.genres[0]}
                       url={value.url}
                     />
-                  }) : <div>No information for you dick</div>
+                  }) : <div className="col-md-12"><p>No information to show yet</p></div>
               }
             </div>
           </div>
@@ -221,7 +221,7 @@ export default class Dashboard extends react.Component {
                       max_temp={Math.round(value.max_temp)}
                       the_temp={Math.round(value.the_temp)}
                     />
-                  }) : <div>No information for you dick</div>
+                  }) : <div className="col-md-12"><p>No information to show yet</p></div>
               }
             </div>
           </div>
@@ -235,21 +235,21 @@ export default class Dashboard extends react.Component {
                   <Crypto cryptoName={btcData.base}
                     cryptoPrice={btcData.price}
                     cryptoVolume={btcData.volume}
-                  /> : <div>No crypto for you dick</div>
+                  /> : <div className="col-md-12"><p>No information to show yet</p></div>
               }
               {
                 (ethData !== undefined) ?
                   <Crypto cryptoName={ethData.base}
                     cryptoPrice={ethData.price}
                     cryptoVolume={ethData.volume}
-                  /> : <div>No crypto for you dick</div>
+                  /> : <div className="col-md-12"><p>No information to show yet</p></div>
               }
               {
                 (xrpData !== undefined) ?
                   <Crypto cryptoName={xrpData.base}
                     cryptoPrice={xrpData.price}
                     cryptoVolume={xrpData.volume}
-                  /> : <div>No crypto for you dick</div>
+                  /> : <div className="col-md-12"><p>No information to show yet</p></div>
               }
             </div>
           </div>
@@ -264,7 +264,7 @@ export default class Dashboard extends react.Component {
                     text={factData.text}
                     source={factData.source}
                     source_url={factData.source_url}
-                  /> : <div>No information for you dick</div>
+                  /> : <div>This API is currently under maintnance. Come back later. </div>
               }
             </div>
           </div>

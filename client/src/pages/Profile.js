@@ -1,10 +1,10 @@
 import React, * as react from 'react';
-import Profile from '../components/profile';
+import ProfileInfo from '../components/profile';
 import axios from 'axios';
 import { STRAPI_PROFILE_API } from '../Constants';
 
 
-export default class ProfileSpecific extends react.Component {
+export default class Profile extends react.Component {
   state = {
     profile: undefined,
   }
@@ -22,12 +22,12 @@ export default class ProfileSpecific extends react.Component {
     const { profile } = this.state;
     console.log(profile);
     return (
-      <div className="ProfileSpecific">
+      <div className="Profile">
         <h1 className="text-center pt-8 mb-5">My Profile</h1>
         {
           (profile !== undefined) ?
             profile.map((value, index) => {
-              return <Profile key={index}
+              return <ProfileInfo key={index}
                 profileTitle={value.Name}
                 age={value.Age}
                 skills={value.Skills}

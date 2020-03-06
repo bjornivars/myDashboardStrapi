@@ -4,7 +4,7 @@ import JobCard from '../components/jobs';
 import { HEROKU_BYPASS_CORS } from '../Constants';
 import { JOBS_API } from '../Constants';
 
-export default class JobSpecific extends react.Component {
+export default class Job extends react.Component {
 
   state = {
     allJobs: undefined,
@@ -24,7 +24,7 @@ export default class JobSpecific extends react.Component {
     const { allJobs } = this.state;
     // console.log(allJobs);
     return (
-      <div className="JobSpecific">
+      <div className="Job">
         <div className="container-fluid">
           <div className="row d-flex justify-content-between">
             <div className="row col-md-12 d-flex ">
@@ -42,7 +42,7 @@ export default class JobSpecific extends react.Component {
                       description={value.description}
                       company_url={value.company_url}
                     />
-                  }) : <div>No information for you dick</div>
+                  }) : <div className="col-md-12"><p>No information to show yet</p></div>
               }
             </div>
           </div>
