@@ -4,9 +4,23 @@ body{
     color: white;
 }
 
+
+
 .card{
     background-color: transparent;
     border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.btn{
+    &-primary{
+    background-color: #ca6600;
+    border-color: #ca6600;
+    }
+    &-logout{
+        width: 10%;
+        margin-left: 90%;
+        margin-top: 3.55em;
+    }
 }
 
 .blogImg{
@@ -38,4 +52,32 @@ body{
 .search-form{
     width: 50%;
     margin-left: 15px;
+}
+
+.profileCard{
+    background-color: transparent;
+    padding: 35px 0px 35px 0px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.searchResult{
+    padding-left: 15px;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+}
+
+
+
+
+.test{
+    position: absolute;
+    margin-left: 95%;
+    top: 6.5em;
+    z-index: 900;
+    color: #ca6600;
+    font-size: 60px;
+}
+
+.padding-l-15{
+    padding-left: 15px;
 }

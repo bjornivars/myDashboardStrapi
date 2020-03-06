@@ -30,8 +30,11 @@ export default class Dashboard extends react.Component {
     movieHeading: 'Search for show by name',
     searchValue: '',
     searchedData: undefined,
+    cameronIsTheMan: "",
 
     factData: undefined,
+
+    showArrow: undefined,
   }
 
   componentDidMount() {
@@ -97,10 +100,10 @@ export default class Dashboard extends react.Component {
         console.log("searched", searched)
         this.setState({
           searchedData: searched.data,
+          cameronIsTheMan: `Results for "${this.state.searchValue}"`,
+          showArrow: '',
+
         })
-      })
-      .catch(error => {
-        console.log('An error occurred: ', error)
       })
   }
 
@@ -108,7 +111,7 @@ export default class Dashboard extends react.Component {
     const { consolidatedWeather, weatherCityName,
       btcData, ethData, xrpData,
       moviesData, searchedData, movieHeading,
-      factData
+      factData, cameronIsTheMan, showArrow,
     } = this.state;
     //console.log(btcData);
     return (
@@ -131,22 +134,28 @@ export default class Dashboard extends react.Component {
                 <input type='submit' className="btn btn-primary" />
               </form>
               </div>
-              <div className="row col-md-12 d-flex ">
+              <div className="mt-3 padding-l-15">{cameronIsTheMan}</div>
+
+              <div className="row d-flex searchResult">
+              {
+                showArrow !== undefined && <div><i className="fas fa-chevron-circle-right test"></i></div>
+              }
+
               {
                 (searchedData !== undefined) ?
                   searchedData.map((value, index) => {
                     let img;
                     (value.show.image !== null) ? img = value.show.image.medium : img = "https://via.placeholder.com/150";
                     return <Movies key={index}
-                      name={value.show.name}
-                      image={img}
-                      genres={value.show.genres[0]}
-                      url={value.show.url}
-                    />
+                                    name={value.show.name}
+                                    image={img}
+                                    genres={value.show.genres[0]}
+                                    url={value.show.url}
+                          />
+                          
                   }) : <div className="col-md-12"><p>No testing results</p></div>
               }
               </div>
-
               <h2 className="col-md-12 mt-5">Top 4 Series this week!</h2>
               {
                 (moviesData !== undefined) ?

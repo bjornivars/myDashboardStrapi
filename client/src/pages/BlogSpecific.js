@@ -27,6 +27,7 @@ export default class BlogSpecific extends Component {
         <h1 className="text-center pt-8 mb-5">My Random Blog</h1>
         {
           (Blogs !== undefined) ?
+          
             Blogs.map((value, index) => {
               return <Blog key={index}
                 Blog={value.Blog}

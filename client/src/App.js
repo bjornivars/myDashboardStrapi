@@ -43,8 +43,8 @@ export default class App extends Component {
     return (sessionStorage.getItem('token') !== null && this.state.isLoggedIn) ? 
     ( 
       <div className="App">
-        <Navbar />        
-        <button className="btn btn-primary pt-5" onClick={this.logoutUser}>Log out</button>
+        <Navbar />   
+        <button className="btn btn-primary fixed-top btn-logout" onClick={this.logoutUser}>Log out</button>
           {this.props.children}
       </div>
     ) : (
