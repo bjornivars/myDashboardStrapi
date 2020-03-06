@@ -1,5 +1,9 @@
 # myDashboardStrapi
-A dashboard made with Strapi
+A dashboard made with Strapi and React
 
+username: 
+bjornivars
 
-Created with React and Strapi
+password:
+Pa55word
+
