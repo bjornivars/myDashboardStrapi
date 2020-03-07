@@ -9,7 +9,6 @@ export default class Blog extends Component {
   state = {
     Blogs: undefined,
   }
-
   componentDidMount() {
     axios.get(STRAPI_BLOG_API)
       .then(result => {
@@ -19,7 +18,6 @@ export default class Blog extends Component {
         })
       })
   }
-
   render() {
     const { Blogs } = this.state;
     console.log(Blogs);

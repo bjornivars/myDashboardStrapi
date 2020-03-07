@@ -15,7 +15,6 @@ import {
   FACT_API
 } from '../Constants';
 
-
 export default class Dashboard extends react.Component {
   state = {
     consolidatedWeather: undefined,
@@ -152,7 +151,6 @@ export default class Dashboard extends react.Component {
                         genres={value.show.genres[0]}
                         url={value.show.url}
                       />
-
                     }) : <div className="col-md-12"><p>No search results</p></div>
                 }
               </div>
