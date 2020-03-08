@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import BlogPost from '../components/blog';
 import axios from 'axios';
 import { STRAPI_BLOG_API } from '../Constants';
+import BlogPost from '../components/blog';
+
+
 
 
 export default class Blog extends Component {
@@ -26,7 +28,6 @@ export default class Blog extends Component {
         <h1 className="text-center pt-8 mb-5">My Random Blog</h1>
         {
           (Blogs !== undefined) ?
-
             Blogs.map((value, index) => {
               return <BlogPost key={index}
                 Blog={value.Blog}

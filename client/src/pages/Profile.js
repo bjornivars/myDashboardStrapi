@@ -1,8 +1,7 @@
 import React, * as react from 'react';
-import ProfileInfo from '../components/profile';
 import axios from 'axios';
 import { STRAPI_PROFILE_API } from '../Constants';
-
+import ProfileInfo from '../components/profile';
 
 export default class Profile extends react.Component {
   state = {

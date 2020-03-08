@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-// import {logoutUser} from '../App';
 
 const Navbar = () => {
   return (
@@ -27,7 +26,7 @@ const Navbar = () => {
           </ul>
         </div>
       </nav>
-    </div> // Main div
+    </div> 
   )
 }
 

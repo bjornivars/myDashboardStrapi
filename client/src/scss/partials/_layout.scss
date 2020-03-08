@@ -1,33 +1,29 @@
 body {
     // background-color: #123140;
-    background-color: #23373b;
-    color: white;
+    background-color: $site-primary-color;
+    color: $text-color;
 }
-
-
-
 .card {
     background-color: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    border: 1px solid $card-border-color;
 
     &-img-top {
         height: 28em;
     }
 }
-
 .btn {
     &-primary {
-        background-color: #ca6600;
-        border-color: #ca6600;
+        background-color: $site-button-color;
+        border-color: $site-button-color;
 
         &:hover {
-            background-color: #9c4e00;
-            border-color: #9c4e00;
+            background-color: $site-hover-button-color;
+            border-color: $site-hover-button-color;
         }
 
         &:focus {
-            background-color: #9c4e00;
-            border-color: #9c4e00;
+            background-color: $site-hover-button-color;
+            border-color: $site-hover-button-color;
         }
     }
 
@@ -37,59 +33,51 @@ body {
         margin-top: 3.55em;
     }
 }
-
 .blogImg {
     max-height: 40% !important;
 }
-
 .headerPadding {
     padding-left: 45px;
     margin-top: 2.5em;
 }
-
 .no-border {
     border: 0;
 }
-
 .weatherImage {
     width: 100%;
-
 }
-
 .companyLogo {
     height: 11em;
 }
-
 .pt-8 {
     margin-top: 2.5em;
 }
-
 .search-form {
     width: 50%;
     margin-left: 15px;
 }
-
 .profileCard {
     background-color: transparent;
     padding: 35px 0px 35px 0px;
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    border: 1px solid $card-border-color;
 }
-
 .searchResult {
     padding-left: 15px;
     flex-wrap: nowrap;
     overflow-x: scroll;
 }
-
 .test {
     position: absolute;
     margin-left: 95%;
     top: 6.5em;
     z-index: 900;
-    color: #fa7d00;
+    color: $logout-button;
     font-size: 60px;
 }
-
 .padding-l-15 {
     padding-left: 15px;
+}
+.errorMessage{
+    color: $error-color;
+    font-size: larger;
 }

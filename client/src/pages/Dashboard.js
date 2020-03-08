@@ -1,9 +1,5 @@
 import React, * as react from 'react';
 import axios from 'axios';
-import Movies from '../components/movies';
-import Facts from '../components/fact';
-import Weather from '../components/weather';
-import Crypto from '../components/crypto';
 import {
   HEROKU_BYPASS_CORS,
   WEATHER_API,
@@ -14,8 +10,13 @@ import {
   TV_SEARCH_API,
   FACT_API
 } from '../Constants';
+import Movies from '../components/movies';
+import Facts from '../components/fact';
+import Weather from '../components/weather';
+import Crypto from '../components/crypto';
 
 export default class Dashboard extends react.Component {
+
   state = {
     consolidatedWeather: undefined,
     weatherCityName: undefined,
@@ -32,9 +33,12 @@ export default class Dashboard extends react.Component {
     searchResultName: "",
 
     factData: undefined,
+    factDay: new Date().getDate(),
+    factMonth: new Date().getMonth() + 1,
 
     showArrow: undefined,
   }
+
 
   componentDidMount() {
     axios.get(HEROKU_BYPASS_CORS + WEATHER_API)
@@ -73,9 +77,9 @@ export default class Dashboard extends react.Component {
           moviesData: moviesResult.data.slice(0, 4),
         })
       })
-    axios.get(FACT_API)
+    axios.get(HEROKU_BYPASS_CORS + FACT_API + this.state.factMonth + '/' + this.state.factDay + '/date')
       .then(factResult => {
-        // console.log(factResult)
+        // console.log(this.state.factMonth)
         this.setState({
           factData: factResult.data,
         })
@@ -179,34 +183,34 @@ export default class Dashboard extends react.Component {
                     let icon = " ";
                     switch (value.weather_state_name) {
                       case 'Snow':
-                        icon = <img className="weatherImage" src="https://www.metaweather.com/static/img/weather/sn.svg" alt="Thunderstorm" />
+                        icon = <img className="weatherImage" src="https://www.metaweather.com/static/img/weather/sn.svg" alt="Snow" />
                         break;
                       case 'Sleet':
-                        icon = <img className="weatherImage" src="https://www.metaweather.com/static/img/weather/sl.svg" alt="Thunderstorm" />
+                        icon = <img className="weatherImage" src="https://www.metaweather.com/static/img/weather/sl.svg" alt="Sleet" />
                         break;
                       case 'Hail':
-                        icon = <img className="weatherImage" src="https://www.metaweather.com/static/img/weather/h.svg" alt="Thunderstorm" />
+                        icon = <img className="weatherImage" src="https://www.metaweather.com/static/img/weather/h.svg" alt="Hail" />
                         break;
                       case 'Thunder':
-                        icon = <img className="weatherImage" src="https://www.metaweather.com/static/img/weather/t.svg" alt="Thunderstorm" />
+                        icon = <img className="weatherImage" src="https://www.metaweather.com/static/img/weather/t.svg" alt="Thunder" />
                         break;
                       case 'Heavy Rain':
-                        icon = <img className="weatherImage" src="https://www.metaweather.com/static/img/weather/hr.svg" alt="Thunderstorm" />
+                        icon = <img className="weatherImage" src="https://www.metaweather.com/static/img/weather/hr.svg" alt="Heavy Rain" />
                         break;
                       case 'Light Rain':
-                        icon = <img className="weatherImage" src="https://www.metaweather.com/static/img/weather/lr.svg" alt="Thunderstorm" />
+                        icon = <img className="weatherImage" src="https://www.metaweather.com/static/img/weather/lr.svg" alt="Light Rain" />
                         break;
                       case 'Showers':
-                        icon = <img className="weatherImage" src="https://www.metaweather.com/static/img/weather/s.svg" alt="Thunderstorm" />
+                        icon = <img className="weatherImage" src="https://www.metaweather.com/static/img/weather/s.svg" alt="Showers" />
                         break;
                       case 'Heavy Cloud':
-                        icon = <img className="weatherImage" src="https://www.metaweather.com/static/img/weather/hc.svg" alt="Thunderstorm" />
+                        icon = <img className="weatherImage" src="https://www.metaweather.com/static/img/weather/hc.svg" alt="Heavy Cloud" />
                         break;
                       case 'Light Cloud':
-                        icon = <img className="weatherImage" src="https://www.metaweather.com/static/img/weather/lc.svg" alt="Thunderstorm" />
+                        icon = <img className="weatherImage" src="https://www.metaweather.com/static/img/weather/lc.svg" alt="Light Cloud" />
                         break;
                       case 'Clear':
-                        icon = <img className="weatherImage" src="https://www.metaweather.com/api/static/img/weather/c.svg" alt="Thunderstorm" />
+                        icon = <img className="weatherImage" src="https://www.metaweather.com/static/img/weather/c.svg" alt="Clear" />
                         break;
                       default:
                         return 'No image available';
@@ -255,13 +259,11 @@ export default class Dashboard extends react.Component {
           <div className="row d-flex justify-content-between mb-5">
             <div className="row col-md-12 d-flex ">
               {/* Facts Card */}
-              <h2 className="col-md-12 mt-5">Fact of the day</h2>
+              <h2 className="col-md-12 mt-5">What happened on this date in history?</h2>
               {
                 (factData !== undefined) ?
                   <Facts
-                    text={factData.text}
-                    source={factData.source}
-                    source_url={factData.source_url}
+                    text={factData}
                   /> : <div>This API is currently under maintnance. Come back later. </div>
               }
             </div>

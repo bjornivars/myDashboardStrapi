@@ -7,6 +7,8 @@ export default class Login extends Component {
   state = {
     login: '',
     password: '',
+
+    errorMessage: undefined,
   }
 
   handleChange = (input) => {
@@ -34,17 +36,23 @@ export default class Login extends Component {
         this.props.updateLoginStatus();
       })
       .catch(error => {
-        console.log('An error occurred: ', error)
+        console.log('An error occurred: ', error);
+        this.setState({
+          errorMessage: 'Username or Password is incorrect'
+        })
       })
   }
 
-
   render() {
+    const {errorMessage} = this.state;
     return (
       <div className="container-fluid">
         <h1 className="text-center pt-8 mb-5">Login</h1>
         <div className="row m-auto">
           <form onSubmit={this.handleSubmit} className="col-md-4 m-auto">
+          {
+            errorMessage !== undefined && <div><p className='errorMessage'>Username or password is incorrect</p></div>
+          }
             <p>Enter a username</p>
             <input type='text'
               name='username'

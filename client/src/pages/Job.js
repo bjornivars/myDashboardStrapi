@@ -1,8 +1,8 @@
 import React, * as react from 'react';
 import axios from 'axios';
-import JobCard from '../components/jobs';
 import { HEROKU_BYPASS_CORS } from '../Constants';
 import { JOBS_API } from '../Constants';
+import JobCard from '../components/jobs';
 
 export default class Job extends react.Component {
 
@@ -48,8 +48,6 @@ export default class Job extends react.Component {
           </div>
         </div>
       </div>
-
-
     );
   }
 }

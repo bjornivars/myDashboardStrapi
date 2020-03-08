@@ -31,7 +31,8 @@ const Footer = () => {
                     <div className="col-md-8 col-12 mt-2">
                         <p className="pStyle">This Dashboard, Blog, Profile, and Jobs website is Module Assignment 2. The site
                                               is built in React, and is using both APIs from different websites, but also
-                                              with own-built APIs from Strapi. </p>
+                                              with own-built APIs from Strapi. 
+                        </p>
                     </div>
                 </div>
             </div>

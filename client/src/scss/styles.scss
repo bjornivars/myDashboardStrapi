@@ -1,15 +1,5 @@
-//never write CSS in here 
-
-//Variables should always be on top
-// @import "partials/variables";
-//Then layout
+@import "partials/variables";
 @import "partials/layout";
-//Then navbar
 @import "partials/navbar";
-
 @import "partials/movieCard";
-
-/////// then everything between header and footer
-
-// Then footer
 @import "partials/footer";
