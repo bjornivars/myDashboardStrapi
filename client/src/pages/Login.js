@@ -44,15 +44,15 @@ export default class Login extends Component {
   }
 
   render() {
-    const {errorMessage} = this.state;
+    const { errorMessage } = this.state;
     return (
       <div className="container-fluid">
         <h1 className="text-center pt-8 mb-5">Login</h1>
         <div className="row m-auto">
           <form onSubmit={this.handleSubmit} className="col-md-4 m-auto">
-          {
-            errorMessage !== undefined && <div><p className='errorMessage'>Username or password is incorrect</p></div>
-          }
+            {
+              errorMessage !== undefined && <div><p className='errorMessage'>Username or password is incorrect</p></div>
+            }
             <p>Enter a username</p>
             <input type='text'
               name='username'

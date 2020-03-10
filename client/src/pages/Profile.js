@@ -34,7 +34,9 @@ export default class Profile extends react.Component {
                 Image={'http://localhost:1337/' + value.ImageOfMe.url}
               />
             }) :
-            <div>No Information</div>
+            <div className="d-flex justify-content-center col-md-6">
+              <img className='w-100' src='https://flevix.com/wp-content/uploads/2019/07/Bubble-Preloader-1.gif' alt="loading" />
+            </div>
         }
       </div>
     );

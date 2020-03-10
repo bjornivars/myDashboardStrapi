@@ -48,65 +48,67 @@ export default class Job extends react.Component {
               {/* Jobs Card */}
               <h1 className="col-md-12 headerPadding">Jobs Mr. Worldwide</h1>
               <form className='col-md-6'>
-          <p>Search for a Job</p>
-          <input type='text'
-            name='username'
-            onChange={this.handleFiltering}
-            className="form-control"
-          />
-          <br />
-          <br />
-        </form>
-        <div className=" d-flex justify-content-between wrap">
-          {
-            (isResultsFiltered) ?
-              <div className="col-md-12 ">
-                <h1>Filtered Results for {searchPhrase}</h1>
-                <div className='d-flex justify-content-start wrap'>
-                  {
-                    (filteredResults.length > 0) ?
-                      filteredResults.map((value, index) => {
-                        return <JobCard key={index}
-                      id={value.id}
-                      title={value.title}
-                      company_logo={value.company_logo}
-                      company={value.company}
-                      type={value.type}
-                      location={value.location}
-                      description={value.description}
-                      company_url={value.company_url}
-                    />
-                      }) :
-                      <div>No Results</div>
-                  }
-                </div>
-              </div> : <>
+                <p>Search for a Job</p>
+                <input type='text'
+                  name='username'
+                  onChange={this.handleFiltering}
+                  className="form-control"
+                />
+                <br />
+                <br />
+              </form>
+              <div className=" d-flex justify-content-between wrap">
                 {
-                  (jobResults !== undefined) ?
-                  jobResults.map((value, index) => {
-                    return <JobCard key={index}
-                      id={value.id}
-                      title={value.title}
-                      company_logo={value.company_logo}
-                      company={value.company}
-                      type={value.type}
-                      location={value.location}
-                      description={value.description}
-                      company_url={value.company_url}
-                    />
-                    }) : 
-                    <div className="col-md-12"><p>No information to show yet</p></div>
+                  (isResultsFiltered) ?
+                    <div className="col-md-12 ">
+                      <h1>Filtered Results for {searchPhrase}</h1>
+                      <div className='d-flex justify-content-start wrap'>
+                        {
+                          (filteredResults.length > 0) ?
+                            filteredResults.map((value, index) => {
+                              return <JobCard key={index}
+                                id={value.id}
+                                title={value.title}
+                                company_logo={value.company_logo}
+                                company={value.company}
+                                type={value.type}
+                                location={value.location}
+                                description={value.description}
+                                company_url={value.company_url}
+                              />
+                            }) :
+                            <div>No Results</div>
+                        }
+                      </div>
+                    </div> : <>
+                      {
+                        (jobResults !== undefined) ?
+                          jobResults.map((value, index) => {
+                            return <JobCard key={index}
+                              id={value.id}
+                              title={value.title}
+                              company_logo={value.company_logo}
+                              company={value.company}
+                              type={value.type}
+                              location={value.location}
+                              description={value.description}
+                              company_url={value.company_url}
+                            />
+                          }) :
+                          <div className="d-flex justify-content-center col-md-6">
+                            <img className='w-100' src='https://flevix.com/wp-content/uploads/2019/07/Bubble-Preloader-1.gif' alt="loading" />
+                          </div>
+                      }
+                    </>
                 }
-              </>
-          }
-        </div> 
-             
-             
-             
-             
-             
-             
-{/* 
+              </div>
+
+
+
+
+
+
+              {/* 
 
               {
     (jobResults !== undefined) ?
@@ -122,7 +124,7 @@ export default class Job extends react.Component {
         />
       }) : <div className="col-md-12"><p>No information to show yet</p></div>
   }
-*/}  
+*/}
 
             </div>
           </div>

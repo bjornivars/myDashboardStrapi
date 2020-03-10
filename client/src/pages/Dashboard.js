@@ -168,7 +168,10 @@ export default class Dashboard extends react.Component {
                       genres={value.genres[0]}
                       url={value.url}
                     />
-                  }) : <div className="col-md-12"><p>No information to show yet</p></div>
+                  }) :
+                  <div className="d-flex justify-content-center col-md-3">
+                    <img src='https://flevix.com/wp-content/uploads/2019/07/Bubble-Preloader-1.gif' alt="loading" />
+                  </div>
               }
             </div>
           </div>
@@ -223,7 +226,10 @@ export default class Dashboard extends react.Component {
                       max_temp={Math.round(value.max_temp)}
                       the_temp={Math.round(value.the_temp)}
                     />
-                  }) : <div className="col-md-12"><p>No information to show yet</p></div>
+                  }) :
+                  <div className="d-flex justify-content-center col-md-3">
+                    <img src='https://flevix.com/wp-content/uploads/2019/07/Bubble-Preloader-1.gif' alt="loading" />
+                  </div>
               }
             </div>
           </div>
@@ -237,21 +243,30 @@ export default class Dashboard extends react.Component {
                   <Crypto cryptoName={btcData.base}
                     cryptoPrice={btcData.price}
                     cryptoVolume={btcData.volume}
-                  /> : <div className="col-md-12"><p>No information to show yet</p></div>
+                  /> :
+                  <div className="d-flex justify-content-center col-md-3">
+                    <img className='w-100' src='https://flevix.com/wp-content/uploads/2019/07/Bubble-Preloader-1.gif' alt="loading" />
+                  </div>
               }
               {
                 (ethData !== undefined) ?
                   <Crypto cryptoName={ethData.base}
                     cryptoPrice={ethData.price}
                     cryptoVolume={ethData.volume}
-                  /> : <div className="col-md-12"><p>No information to show yet</p></div>
+                  /> :
+                  <div className="d-flex justify-content-center col-md-3">
+                    <img className='w-100' src='https://flevix.com/wp-content/uploads/2019/07/Bubble-Preloader-1.gif' alt="loading" />
+                  </div>
               }
               {
                 (xrpData !== undefined) ?
                   <Crypto cryptoName={xrpData.base}
                     cryptoPrice={xrpData.price}
                     cryptoVolume={xrpData.volume}
-                  /> : <div className="col-md-12"><p>No information to show yet</p></div>
+                  /> :
+                  <div className="d-flex justify-content-center col-md-3">
+                    <img className='w-100' src='https://flevix.com/wp-content/uploads/2019/07/Bubble-Preloader-1.gif' alt="loading" />
+                  </div>
               }
             </div>
           </div>
@@ -264,7 +279,10 @@ export default class Dashboard extends react.Component {
                 (factData !== undefined) ?
                   <Facts
                     text={factData}
-                  /> : <div>This API is currently under maintnance. Come back later. </div>
+                  /> :
+                  <div className="d-flex col-md-3">
+                    <img className='w-100' src='https://flevix.com/wp-content/uploads/2019/07/Bubble-Preloader-1.gif' alt="loading" />
+                  </div>
               }
             </div>
           </div>

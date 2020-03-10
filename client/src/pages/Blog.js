@@ -83,8 +83,10 @@ export default class Blog extends Component {
                         Article={value.Article}
                       />
                     }) : 
-                    <div className="col-md-12"><p>No information to show yet</p></div>
-                }
+                    <div className="d-flex justify-content-center">
+                      <img src='https://flevix.com/wp-content/uploads/2019/07/Bubble-Preloader-1.gif' alt="loading" />
+                    </div>                
+                    }
               </>
           }
         </div>
