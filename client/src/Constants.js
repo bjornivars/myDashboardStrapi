@@ -11,6 +11,7 @@ export const FACT_API = 'http://numbersapi.com/';
 
 // Jobs API
 export const JOBS_API = 'https://jobs.github.com/positions.json?description=react';
+export const JOBS_test_API = 'https://jobs.github.com/positions/';
 
 // Strapi API
 export const STRAPI_API = 'http://localhost:1337/';
