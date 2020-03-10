@@ -11,6 +11,7 @@ import Dashboard from './pages/Dashboard';
 import Blog from './pages/Blog';
 import Job from './pages/Job';
 import Profile from './pages/Profile';
+import BlogSpecific from './pages/BlogSpecific';
 
 
 import * as serviceWorker from './serviceWorker';
@@ -21,9 +22,10 @@ ReactDOM.render(
         <App>
             <Switch>
                 <Route path="/" exact component={Dashboard} />
-                <Route path="/blog-specific/" component={Blog} />
-                <Route path="/profile-specific/" component={Profile} />
-                <Route path="/job-specific/" component={Job} />
+                <Route path="/blog/" exact component={Blog} />
+                <Route path="/profile/" exact component={Profile} />
+                <Route path="/job/" exact component={Job} />
+                <Route path="/blog-specific/:id/" exact component={BlogSpecific} />
             </Switch>
         </App>
     </Router>,
