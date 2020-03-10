@@ -10,6 +10,8 @@ export default class Blog extends Component {
 
   state = {
     Blogs: undefined,
+
+    
   }
   componentDidMount() {
     axios.get(STRAPI_BLOG_API)
