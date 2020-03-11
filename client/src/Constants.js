@@ -22,6 +22,9 @@ export const STRAPI_PROFILE_API = 'http://localhost:1337/Bjornivars';
 // Strapi Blog API
 export const STRAPI_BLOG_API = 'http://localhost:1337/Blogs';
 
+// Strapi Contact API
+export const STRAPI_CONTACT_API = 'http://localhost:1337/Contacts';
+
 // TV API
 export const TV_API = 'http://api.tvmaze.com/shows';
 

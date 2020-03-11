@@ -26,6 +26,11 @@ const Footer = () => {
                             <Link className="nav-link" to="/profile/">{'Profile'}</Link>
                         </h6>
                     </div>
+                    <div className="col-md-2 mb-3">
+                        <h6 className="text-uppercase font-weight-bold">
+                            <Link className="nav-link" to="/contact/">{'Contact'}</Link>
+                        </h6>
+                    </div>
                 </div>
                 <div className="row d-flex text-center justify-content-center mb-md-0 mb-4">
                     <div className="col-md-8 col-12 mt-2">
