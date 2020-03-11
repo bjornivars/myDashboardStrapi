@@ -11,7 +11,7 @@ const Movies = (props) => {
                         <p className="card-text">{props.summary}</p>
                         <p className="card-text">{props.genres}</p>
                         <div className="d-flex justify-content-between">
-                        <a className="btn btn-primary" href={props.url} target="_blank" rel="noopener noreferrer">Watch</a>
+                            <a className="btn btn-primary" href={props.url} target="_blank" rel="noopener noreferrer">Watch</a>
                         </div>
                     </div>
                 </div>

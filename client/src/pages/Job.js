@@ -12,6 +12,9 @@ export default class Job extends react.Component {
     filteredResults: [],
     isResultsFiltered: false,
     searchPhrase: '',
+
+    userName: window.sessionStorage.getItem("user"),
+
   }
 
   componentDidMount() {
@@ -38,52 +41,35 @@ export default class Job extends react.Component {
 
 
   render() {
-    const { jobResults, isResultsFiltered, searchPhrase, filteredResults } = this.state;
+    const { jobResults, isResultsFiltered, searchPhrase, filteredResults, userName } = this.state;
     console.log(jobResults);
     return (
       <div className="Job">
-        <div className="container-fluid">
-          <div className="row d-flex justify-content-between">
-            <div className="row col-md-12 d-flex ">
-              {/* Jobs Card */}
-              <h1 className="col-md-12 headerPadding">Jobs Mr. Worldwide</h1>
-              <form className='col-md-6'>
-                <p>Search for a Job</p>
-                <input type='text'
-                  name='username'
-                  onChange={this.handleFiltering}
-                  className="form-control"
-                />
-                <br />
-                <br />
-              </form>
-              <div className=" d-flex justify-content-between wrap">
-                {
-                  (isResultsFiltered) ?
-                    <div className="col-md-12 ">
-                      <h1>Filtered Results for {searchPhrase}</h1>
-                      <div className='d-flex justify-content-start wrap'>
-                        {
-                          (filteredResults.length > 0) ?
-                            filteredResults.map((value, index) => {
-                              return <JobCard key={index}
-                                id={value.id}
-                                title={value.title}
-                                company_logo={value.company_logo}
-                                company={value.company}
-                                type={value.type}
-                                location={value.location}
-                                description={value.description}
-                                company_url={value.company_url}
-                              />
-                            }) :
-                            <div>No Results</div>
-                        }
-                      </div>
-                    </div> : <>
+        <div className="row d-flex justify-content-between">
+          {/* Jobs Card */}
+          <div className="jumbotronImage-Job text-center">
+            <h1 className="col-md-12 headerPadding">Jobs that might suit you, {userName}</h1>
+            <form className='col-md-6 m-auto'>
+              <p>Search for a React Job</p>
+              <input type='text'
+                name='username'
+                onChange={this.handleFiltering}
+                className="form-control"
+              />
+              <br />
+              <br />
+            </form>
+          </div>
+          <div className="container-fluid">
+            <div className=" d-flex justify-content-between wrap">
+              {
+                (isResultsFiltered) ?
+                  <div className="col-md-12 ">
+                    <h1>Filtered Results for "{searchPhrase}"</h1>
+                    <div className='d-flex justify-content-start wrap'>
                       {
-                        (jobResults !== undefined) ?
-                          jobResults.map((value, index) => {
+                        (filteredResults.length > 0) ?
+                          filteredResults.map((value, index) => {
                             return <JobCard key={index}
                               id={value.id}
                               title={value.title}
@@ -95,39 +81,33 @@ export default class Job extends react.Component {
                               company_url={value.company_url}
                             />
                           }) :
-                          <div className="d-flex justify-content-center col-md-6">
-                            <img className='w-100' src='https://flevix.com/wp-content/uploads/2019/07/Bubble-Preloader-1.gif' alt="loading" />
-                          </div>
+                          <div>No Results</div>
                       }
-                    </>
-                }
-              </div>
-
-
-
-
-
-
-              {/* 
-
-              {
-    (jobResults !== undefined) ?
-      jobResults.map((value, index) => {
-        return <JobCard key={index}
-          title={value.title}
-          company_logo={value.company_logo}
-          company={value.company}
-          type={value.type}
-          location={value.location}
-          description={value.description}
-          company_url={value.company_url}
-        />
-      }) : <div className="col-md-12"><p>No information to show yet</p></div>
-  }
-*/}
-
+                    </div>
+                  </div> : <>
+                    {
+                      (jobResults !== undefined) ?
+                        jobResults.map((value, index) => {
+                          return <JobCard key={index}
+                            id={value.id}
+                            title={value.title}
+                            company_logo={value.company_logo}
+                            company={value.company}
+                            type={value.type}
+                            location={value.location}
+                            description={value.description}
+                            company_url={value.company_url}
+                          />
+                        }) :
+                        <div className="d-flex justify-content-center col-md-6">
+                          <img className='w-100' src='https://flevix.com/wp-content/uploads/2019/07/Bubble-Preloader-1.gif' alt="loading" />
+                        </div>
+                    }
+                  </>
+              }
             </div>
           </div>
+
         </div>
       </div>
     );

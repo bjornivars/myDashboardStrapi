@@ -86,3 +86,36 @@ body {
 .wrap{
     flex-wrap: wrap;
 }
+
+.job__image{
+    width: 100%;
+    height: 350px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+
+.jumbotronImage{
+    &-Blog{
+        background-image: url('../../assets/blogHeader.png');
+        width: 100%;
+        padding-top: 4em;
+        padding-bottom: 4em;
+        margin-bottom: 4em;
+        height: 30em;
+    }
+    &-Job{
+        background-image: url('../../assets/jobHeader-02.png');
+        width: 100%;
+        padding-top: 4em;
+        padding-bottom: 4em;
+        margin-bottom: 4em;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        height: 30em;
+
+    }
+
+}

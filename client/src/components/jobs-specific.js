@@ -11,7 +11,7 @@ const JobClick = (props) => {
                     <p className="mt-3 text-center"><Moment>{created_at}</Moment></p>
                     <img className="card-img-top" src={company_logo} alt={title} />
                     <div className='mt-5'>
-                        <p>{description}</p>
+                        <div dangerouslySetInnerHTML={{ __html: description }} />
                     </div>
 
                 </div>

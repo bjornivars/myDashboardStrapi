@@ -37,6 +37,8 @@ export default class Dashboard extends react.Component {
     factMonth: new Date().getMonth() + 1,
 
     showArrow: undefined,
+
+    userName: window.sessionStorage.getItem("user"),
   }
 
 
@@ -110,16 +112,19 @@ export default class Dashboard extends react.Component {
       })
   }
 
+
+
   render() {
     const { consolidatedWeather, weatherCityName,
       btcData, ethData, xrpData,
       moviesData, searchedData, movieHeading,
       factData, searchResultName, showArrow,
+      userName,
     } = this.state;
     //console.log(btcData);
     return (
       <div className="Component">
-        <h1 className="mb-3 headerPadding">Welcome back</h1>
+        <h1 className="mb-5 headerPadding">Welcome back, {userName}</h1>
         <div className="DashBoard container-fluid">
           <div className="row d-flex justify-content-between">
             <div className="row col-md-12 d-flex ">
@@ -179,7 +184,7 @@ export default class Dashboard extends react.Component {
           <div className="row d-flex justify-content-between">
             <div className="row col-md-12 d-flex ">
               {/* Weather Card */}
-              <h2 className="col-md-12 mt-5">Weather for {weatherCityName} the next 6 days</h2>
+              <h2 className="col-md-12 mt-5">Weather in {weatherCityName} the next 6 days</h2>
               {
                 (consolidatedWeather !== undefined) ?
                   consolidatedWeather.map((value, index) => {
