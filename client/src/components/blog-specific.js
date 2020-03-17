@@ -14,7 +14,6 @@ const BlogClick = (props) => {
                         <p>{Article}</p>
                         <p>{Article2}</p>
                     </div>
-
                 </div>
             </div>
         </>
