@@ -24,6 +24,9 @@
     },
     "Article": {
       "type": "richtext"
+    },
+    "Article2": {
+      "type": "richtext"
     }
   }
 }
