@@ -81,7 +81,7 @@ export default class Job extends react.Component {
                               company_url={value.company_url}
                             />
                           }) :
-                          <div>No Results</div>
+                          <div>No Resultsssss</div>
                       }
                     </div>
                   </div> : <>
