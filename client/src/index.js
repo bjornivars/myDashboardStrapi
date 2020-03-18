@@ -23,15 +23,17 @@ import StarWars from './pages/StarWars';
 
 import * as serviceWorker from './serviceWorker';
 
+/*
 export const store = createStore(
     reducer,
     compose(
         devToolsEnhancer()
     )
 );
+*/
 
 ReactDOM.render(
-    <Provider store={store} >
+    //<Provider store={store} >
         <Router>
             <App>
                 <Switch>
@@ -46,7 +48,7 @@ ReactDOM.render(
                 </Switch>
             </App>
         </Router>
-    </Provider>
+    //</Provider>
     ,
 
     document.getElementById('root'));

@@ -70,7 +70,7 @@ export default class Blog extends Component {
                           id={value.id}
                           Blog={value.Blog}
                           created_at={value.created_at}
-                          Image={'http://localhost:1337/' + value.Image.url}
+                          Image={'http://localhost:1337' + value.Image.url}
                         />
                       }) :
                       <div>No Results</div>
@@ -84,7 +84,7 @@ export default class Blog extends Component {
                         id={value.id}
                         Blog={value.Blog}
                         created_at={value.created_at}
-                        Image={'http://localhost:1337/' + value.Image.url}
+                        Image={'http://localhost:1337' + value.Image.url}
                         Article={value.Article}
                       />
                     }) :

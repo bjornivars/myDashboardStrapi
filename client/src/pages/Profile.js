@@ -31,7 +31,7 @@ export default class Profile extends react.Component {
                 age={value.Age}
                 skills={value.Skills}
                 email={value.Email}
-                Image={'http://localhost:1337/' + value.ImageOfMe.url}
+                Image={'http://localhost:1337' + value.ImageOfMe.url}
               />
             }) :
             <div className="d-flex justify-content-center col-md-6">

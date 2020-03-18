@@ -36,7 +36,7 @@ export default class BlogSpecific extends Component {
                         (blogResults !== undefined) ?
                             <BlogClick
                                 Blog={blogResults.Blog}
-                                Image={'http://localhost:1337/' + blogResults.Image.url}
+                                Image={'http://localhost:1337' + blogResults.Image.url}
                                 created_at={blogResults.created_at}
                                 Article={blogResults.Article}
                                 Article2={blogResults.Article2}
