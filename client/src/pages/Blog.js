@@ -45,7 +45,7 @@ export default class Blog extends Component {
     return (
       <div className="Blog">
         <div className="jumbotronImage-Blog">
-          <h1 className="text-center pt-8 mb-5">{userName} Random Blog</h1>
+          <h1 className="text-center pt-8 mb-5">{userName} Random Blogs</h1>
           <form className='col-md-6 m-auto'>
             <p>Search for a Blog</p>
             <input type='text'
